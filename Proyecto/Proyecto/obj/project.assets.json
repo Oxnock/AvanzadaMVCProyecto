@@ -12545,11 +12545,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jose\\Documents\\GitHub\\Proyecto\\Proyecto\\Proyecto.csproj",
+      "projectUniqueName": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\Proyecto\\Proyecto\\Proyecto.csproj",
       "projectName": "Proyecto",
-      "projectPath": "C:\\Users\\jose\\Documents\\GitHub\\Proyecto\\Proyecto\\Proyecto.csproj",
+      "projectPath": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\Proyecto\\Proyecto\\Proyecto.csproj",
       "packagesPath": "C:\\Users\\jose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jose\\Documents\\GitHub\\Proyecto\\Proyecto\\obj\\",
+      "outputPath": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\Proyecto\\Proyecto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
