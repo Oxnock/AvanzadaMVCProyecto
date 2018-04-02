@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace Proyecto.Models
 {
@@ -9,8 +11,15 @@ namespace Proyecto.Models
     {
 		public int AsistenciaProfesorId { get; set; }
 		public Grupo Grupo { get; set; }
-		public int Semana { get; set; }
-		public string Entrada { get; set; }
-		public string Salida { get; set; }
+
+        [Required(ErrorMessage = "Campo requerido")]
+        [Range(1, int.MaxValue, ErrorMessage = "Numero de semana no puede ser negativa")]
+        public int Semana { get; set; }
+
+        [Required(ErrorMessage = "Campo requerido")]
+        public DateTime Entrada { get; set; }
+
+        [Required(ErrorMessage = "Campo requerido")]
+        public DateTime Salida { get; set; }
 	}
 }
