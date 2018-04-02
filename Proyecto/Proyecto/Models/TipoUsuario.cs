@@ -8,6 +8,7 @@ namespace Proyecto.Models
 {
     public class TipoUsuario
     {
+		public int TipoUsuarioId { get; set; }
 		public Usuario Carne { get; set; }
 		public Tipo Tipo { get; set; }
 		[Required(ErrorMessage = "Campo  Requerido")]

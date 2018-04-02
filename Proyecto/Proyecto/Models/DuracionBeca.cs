@@ -9,6 +9,7 @@ namespace Proyecto.Models
 {
     public class DuracionBeca
     {
+		public int DuracionBecaId { get; set; }
 		public Beca BecaId { get; set; }
         Usuario Carne { get; set; }
 

@@ -8,6 +8,7 @@ namespace Proyecto.Models
 {
     public class Parametros
     {
+		public int ParametrosId { get; set; }
 		[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
 		public DateTime fechaLimOrd { get; set; }
 

@@ -8,10 +8,11 @@ namespace Proyecto.Models
 {
     public class Permiso
     {
+
 		public Accion Accion { get; set; }
 		public Tipo Tipo { get; set; }
 		[Required(ErrorMessage = "Campo  Requerido")]
 		[Range(0, int.MaxValue, ErrorMessage = "Ingrese un numero valido")]
-		public int vPermiso { get; set; }
+		public int PermisoId { get; set; }
 	}
 }

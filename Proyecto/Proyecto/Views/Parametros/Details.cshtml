@@ -1,0 +1,42 @@
+﻿@model Proyecto.Models.Parametros
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Parametros</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaLimOrd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaLimOrd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaLimExt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaLimExt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.descuento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.descuento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.maxCred)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.maxCred)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ParametrosId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

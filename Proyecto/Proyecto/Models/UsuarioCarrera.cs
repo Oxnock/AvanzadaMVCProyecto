@@ -7,6 +7,7 @@ namespace Proyecto.Models
 {
     public class UsuarioCarrera
     {
+		public int UsuarioCarreraId { get; set; }
 		public Usuario Usuario { get; set; }
 		public Carrera Carrera { get; set; }
 		public DateTime FechaInicial { get; set; }

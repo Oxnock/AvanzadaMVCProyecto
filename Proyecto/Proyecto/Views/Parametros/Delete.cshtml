@@ -1,0 +1,45 @@
+﻿@model Proyecto.Models.Parametros
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Parametros</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaLimOrd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaLimOrd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaLimExt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaLimExt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.descuento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.descuento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.maxCred)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.maxCred)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ParametrosId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+﻿@model Proyecto.Models.Menu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Enlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Enlace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Orden)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Orden)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MenuId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
