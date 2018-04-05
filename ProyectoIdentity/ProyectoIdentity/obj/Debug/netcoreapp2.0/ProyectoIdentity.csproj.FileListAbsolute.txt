@@ -1,0 +1,12 @@
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\bin\Debug\netcoreapp2.0\ProyectoIdentity.deps.json
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\bin\Debug\netcoreapp2.0\ProyectoIdentity.runtimeconfig.json
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\bin\Debug\netcoreapp2.0\ProyectoIdentity.runtimeconfig.dev.json
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\bin\Debug\netcoreapp2.0\ProyectoIdentity.dll
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\bin\Debug\netcoreapp2.0\ProyectoIdentity.pdb
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.csprojResolveAssemblyReference.cache
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.csproj.CoreCompileInputs.cache
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.AssemblyInfoInputs.cache
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.AssemblyInfo.cs
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.dll
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\ProyectoIdentity.pdb
+C:\Users\jose\Desktop\ProyectoIdentity\ProyectoIdentity\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
