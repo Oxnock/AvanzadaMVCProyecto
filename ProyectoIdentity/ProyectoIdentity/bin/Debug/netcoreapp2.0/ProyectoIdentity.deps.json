@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "5450987bfdf97cf2a0c72fd7427aec110b1ae9c4"
+    "signature": "af7d05cd9a5e04f718bc4a3bdc4a36e68e23333f"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,9 @@
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.5",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2",
+          "MySql.Data.Entity": "6.10.6",
+          "MySql.Web": "6.10.6"
         },
         "runtime": {
           "ProyectoIdentity.dll": {}
@@ -2469,6 +2471,22 @@
         },
         "compile": {
           "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+        }
+      },
+      "MySql.Data.Entity/6.10.6": {
+        "runtime": {
+          "lib/net452/MySql.Data.Entity.EF6.dll": {}
+        },
+        "compile": {
+          "lib/net452/MySql.Data.Entity.EF6.dll": {}
+        }
+      },
+      "MySql.Web/6.10.6": {
+        "runtime": {
+          "lib/net452/MySql.Web.dll": {}
+        },
+        "compile": {
+          "lib/net452/MySql.Web.dll": {}
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -5482,6 +5500,20 @@
       "sha512": "sha512-dA36TlNVn/XfrZtmf0fiI/z1nd3Wfp2QVzTdj26pqgP9LFWq0i1hYEUAW50xUjGFYn1+/cP3KGuxT2Yn1OUNBQ==",
       "path": "microsoft.win32.registry/4.4.0",
       "hashPath": "microsoft.win32.registry.4.4.0.nupkg.sha512"
+    },
+    "MySql.Data.Entity/6.10.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+YoEmjyco/CM9VRa8bDmGGfOtZ71Oo0TtpfoN772rZJ+28XBd2s2VxWOM8xWI1+oYQNrV48d6FYJyHJC6eTFBw==",
+      "path": "mysql.data.entity/6.10.6",
+      "hashPath": "mysql.data.entity.6.10.6.nupkg.sha512"
+    },
+    "MySql.Web/6.10.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CLRjAyGn7thLzyVVD6Bt/waXpGMFhUpNrcu/QlPATv6FBJ+r+YE8Jnwx/LkkC3x8vIA+GbQGoZEV6JWQ6x6Uqw==",
+      "path": "mysql.web/6.10.6",
+      "hashPath": "mysql.web.6.10.6.nupkg.sha512"
     },
     "Newtonsoft.Json/10.0.1": {
       "type": "package",
