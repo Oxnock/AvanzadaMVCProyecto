@@ -3,10 +3,67 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asistencia</title>
 
-<h2>Index</h2>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-<p>
+    <!-- Css sheet-->
+    <link href="~/css/Asistencia.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section>
+        <br>
+        <h4 class="titleheaders"> Asistencia</h4>
+    </section>
+    <section class='container'>
+        <form>
+            <div class='row'>
+                <div class='col-12 offset-md-2 col-md-8 text-center'>
+                    <ul class="list-group align-middle">
+                        <li class="list-group-item">
+                            Alfredo Valverde Gonzalez Alejandro
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                        <li class="list-group-item">
+                            Juan Carlos Sanchez
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                        <li class="list-group-item">
+                            Carla Daniela Zepeda
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                        <li class="list-group-item">
+                            Armando Alfonzo Ramirez
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                        <li class="list-group-item">
+                            Juan Manuel Jimenez
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                        <li class="list-group-item">
+                            Andre Paul Vigneault
+                            <input class="btn float-right btn bg-success text-white col-12 col-md-3" type='button' value="Presente">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 offset-md-2 col-md-8">
+                    <input class=' col-12 btn btn-success' type="submit">
+                </div>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
+ 
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -38,4 +95,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
