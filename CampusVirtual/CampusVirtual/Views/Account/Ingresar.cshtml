@@ -1,0 +1,28 @@
+﻿@model CampusVirtual.ViewModels.AccountViewModels.IngresarViewModel
+@{
+    ViewBag.Title = "Ingresar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ingresar</h2>
+<form asp-action="Ingresar" asp-controller="Account" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" />
+            <span asp-validation-for="Nombre"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Clave"></label>
+        <div>
+            <input asp-for="Clave" />
+            <span asp-validation-for="Clave"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Ingresar" />
+    </div>
+</form>
+
