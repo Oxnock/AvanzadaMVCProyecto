@@ -11,9 +11,10 @@ using System;
 namespace CampusVirtual.Migrations
 {
     [DbContext(typeof(CampusContext))]
-    partial class CampusContextModelSnapshot : ModelSnapshot
+    [Migration("20180411232313_Notas")]
+    partial class Notas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

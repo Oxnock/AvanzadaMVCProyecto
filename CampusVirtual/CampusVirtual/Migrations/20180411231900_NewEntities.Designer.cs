@@ -11,9 +11,10 @@ using System;
 namespace CampusVirtual.Migrations
 {
     [DbContext(typeof(CampusContext))]
-    partial class CampusContextModelSnapshot : ModelSnapshot
+    [Migration("20180411231900_NewEntities")]
+    partial class NewEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,18 +65,6 @@ namespace CampusVirtual.Migrations
                     b.HasIndex("CursoId");
 
                     b.ToTable("Evaluaciones");
-                });
-
-            modelBuilder.Entity("CampusVirtual.Model.Entities.Nota", b =>
-                {
-                    b.Property<int>("NotaId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("UsuarioId");
-
-                    b.HasKey("NotaId");
-
-                    b.ToTable("Notas");
                 });
 
             modelBuilder.Entity("CampusVirtual.Model.Entities.TipoUsuario", b =>
