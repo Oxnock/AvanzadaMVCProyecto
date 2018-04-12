@@ -5,6 +5,7 @@
         },
         responsive: true
     });
+
     $('.not-number').keyup(function (e) {
         if (!/^[ a-záéíóúüñ]*$/i.test(this.value)) {
             this.value = this.value.replace(/[^ a-záéíóúüñ]+/ig, "");
