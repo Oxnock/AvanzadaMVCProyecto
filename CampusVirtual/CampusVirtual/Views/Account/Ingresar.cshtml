@@ -1,7 +1,7 @@
 ﻿@model CampusVirtual.ViewModels.AccountViewModels.IngresarViewModel
 @{
     ViewBag.Title = "Ingresar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
@@ -16,7 +16,7 @@
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
     <!-- JS and CSS -->
     <link href="~/css/Login.css" rel="stylesheet" type="text/css" />
-    <script src="~/js/Login.js"></script>
+    //<script src="~/js/Login.js" asp-append-version="true"></script>
 }
 
 <body>
@@ -24,7 +24,7 @@
     <div class="login-box">
         <img src="~/img/avatar.png" class="img-responsive avatar" alt="User">
         <h1>Iniciar sesión</h1>
-        <form asp-action="Ingresar" asp-controller="Account" method="post" class="login form-login">
+        <form asp-action="Registrar" asp-controller="Account" method="post" class="login form-login">
 
             <div asp-validation-summary="All"></div>
             <div>
