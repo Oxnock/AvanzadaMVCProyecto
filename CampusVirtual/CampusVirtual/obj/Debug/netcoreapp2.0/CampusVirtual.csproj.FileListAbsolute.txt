@@ -31,3 +31,9 @@ C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csprojResolveAssemblyReference.cache
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csproj.CoreCompileInputs.cache
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfoInputs.cache
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
+C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb

@@ -1,0 +1,30 @@
+﻿@model CampusVirtual.ViewModels.Curso.Index
+@{
+	Layout = "~/Views/Shared/_layout.cshtml";
+	ViewBag.Title = Model.Title;
+}
+
+		<div class="container container-menu">
+			<h4 class="titleheaders">Mis cursos</h4>
+			<div class="list-group">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var Curso in Model.List)
+			{
+						<tr>
+						@*no se cono hacer para mandarlo a esta parte
+							normalmente lo que haria seria llamar al controller de la vista y q vaya por el id del curso*@
+							<td href="programacion.html" class="list-group-item list-group-item-action"> @Curso.Nombre</td>
+						
+						</tr>
+}
+
+					</tbody>
+				</table>
+			</div>
+			</div>
