@@ -1,0 +1,27 @@
+﻿@model CampusVirtual.ViewModels.CursoViewModels.MatricularViewModel
+@{
+    ViewBag.Title = "Matricula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Matricula</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Curso</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var curso in Model.Cursos)
+        {
+            <tr>
+                <td>
+                    @curso.Nombre
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CampusVirtual.Model;
+using CampusVirtual.Model.Entities;
 using CampusVirtual.ViewModels.HomeViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,16 +13,16 @@ namespace CampusVirtual.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<Usuario> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private CampusContext _context;
 
-        public HomeController(SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager,
+        public HomeController(UserManager<Usuario> userManager,
+            RoleManager<IdentityRole> roleManager,
             CampusContext context)
         {
-            _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
             _context = context;
         }
 
@@ -29,11 +30,13 @@ namespace CampusVirtual.Controllers
         public async Task<IActionResult> Index()
         {
             var CurrentUser = await _userManager.GetUserAsync(User);
+            var Roles = await _userManager.GetRolesAsync(CurrentUser);
+
             IndexViewModel indexViewModel = new IndexViewModel() {
                 Id = CurrentUser.Id,
                 Nombre = CurrentUser.UserName,
                 Clave = CurrentUser.PasswordHash,
-                TipoUsuario = _context.TipoUsuarios.SingleOrDefault(u => u.UsuarioId == CurrentUser.Id).Tipo
+                TipoUsuario = Roles.FirstOrDefault()
             };
             return View(indexViewModel);
         }

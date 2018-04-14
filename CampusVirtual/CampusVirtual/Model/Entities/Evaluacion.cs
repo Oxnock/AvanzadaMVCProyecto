@@ -7,7 +7,12 @@ namespace CampusVirtual.Model.Entities
 {
     public class Evaluacion
     {
+        public Evaluacion() {
+            Notas = new List<Nota>();
+        }
         public int EvaluacionId { get; set; }
+        public string  Nombre { get; set; }
         public Curso Curso { get; set; }
+        public virtual ICollection<Nota> Notas { get; set; }
     }
 }

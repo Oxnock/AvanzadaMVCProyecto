@@ -37,6 +37,8 @@ namespace CampusVirtual.Migrations
 
                     b.HasIndex("CursoId");
 
+                    b.HasIndex("UsuarioId");
+
                     b.ToTable("Asistencias");
                 });
 
@@ -59,6 +61,8 @@ namespace CampusVirtual.Migrations
 
                     b.Property<int?>("CursoId");
 
+                    b.Property<string>("Nombre");
+
                     b.HasKey("EvaluacionId");
 
                     b.HasIndex("CursoId");
@@ -71,87 +75,20 @@ namespace CampusVirtual.Migrations
                     b.Property<int>("NotaId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("EvaluacionId");
+
                     b.Property<string>("UsuarioId");
 
                     b.HasKey("NotaId");
 
+                    b.HasIndex("EvaluacionId");
+
+                    b.HasIndex("UsuarioId");
+
                     b.ToTable("Notas");
                 });
 
-            modelBuilder.Entity("CampusVirtual.Model.Entities.TipoUsuario", b =>
-                {
-                    b.Property<int>("TipoUsuarioId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Tipo");
-
-                    b.Property<string>("UsuarioId");
-
-                    b.HasKey("TipoUsuarioId");
-
-                    b.ToTable("TipoUsuarios");
-                });
-
-            modelBuilder.Entity("CampusVirtual.Model.Entities.UsuarioCurso", b =>
-                {
-                    b.Property<int>("UsuarioCursoId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("CursoId");
-
-                    b.Property<string>("UsuarioId");
-
-                    b.HasKey("UsuarioCursoId");
-
-                    b.HasIndex("CursoId");
-
-                    b.ToTable("UsuarioCurso");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ClaimType");
-
-                    b.Property<string>("ClaimValue");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Usuario", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -200,6 +137,67 @@ namespace CampusVirtual.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("CampusVirtual.Model.Entities.UsuarioCurso", b =>
+                {
+                    b.Property<int>("UsuarioCursoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CursoId");
+
+                    b.Property<string>("UsuarioId");
+
+                    b.HasKey("UsuarioCursoId");
+
+                    b.HasIndex("CursoId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioCurso");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -272,6 +270,10 @@ namespace CampusVirtual.Migrations
                     b.HasOne("CampusVirtual.Model.Entities.Curso", "Curso")
                         .WithMany()
                         .HasForeignKey("CursoId");
+
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario", "Usuario")
+                        .WithMany("Asistencias")
+                        .HasForeignKey("UsuarioId");
                 });
 
             modelBuilder.Entity("CampusVirtual.Model.Entities.Evaluacion", b =>
@@ -281,11 +283,27 @@ namespace CampusVirtual.Migrations
                         .HasForeignKey("CursoId");
                 });
 
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Nota", b =>
+                {
+                    b.HasOne("CampusVirtual.Model.Entities.Evaluacion", "Evaluacion")
+                        .WithMany("Notas")
+                        .HasForeignKey("EvaluacionId");
+
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario", "Usuario")
+                        .WithMany("Notas")
+                        .HasForeignKey("UsuarioId");
+                });
+
             modelBuilder.Entity("CampusVirtual.Model.Entities.UsuarioCurso", b =>
                 {
                     b.HasOne("CampusVirtual.Model.Entities.Curso", "Curso")
-                        .WithMany("UCs")
-                        .HasForeignKey("CursoId");
+                        .WithMany("UsuarioCursos")
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario", "Usuario")
+                        .WithMany("Cursos")
+                        .HasForeignKey("UsuarioId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -298,7 +316,7 @@ namespace CampusVirtual.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -306,7 +324,7 @@ namespace CampusVirtual.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -319,7 +337,7 @@ namespace CampusVirtual.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -327,7 +345,7 @@ namespace CampusVirtual.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

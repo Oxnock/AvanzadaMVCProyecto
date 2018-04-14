@@ -7,9 +7,14 @@ namespace CampusVirtual.Model.Entities
 {
     public class Curso
     {
+        public Curso() {
+            UsuarioCursos = new List<UsuarioCurso>();
+            Evaluaciones = new List<Evaluacion>();
+        }
+
         public int CursoId { get; set; }
         public string Nombre { get; set; }
-        public ICollection<UsuarioCurso> UCs { get; set; }
-        public ICollection<Evaluacion> Evaluaciones { get; set; }
+        public virtual ICollection<UsuarioCurso> UsuarioCursos { get; set; }
+        public virtual ICollection<Evaluacion> Evaluaciones { get; set; }
     }
 }

@@ -7,26 +7,34 @@ using CampusVirtual.Model.Entities;
 using CampusVirtual.ViewModels.AccountViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CampusVirtual.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<Usuario> _signInManager;
+        private readonly UserManager<Usuario> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private CampusContext _context;
 
-        public AccountController(SignInManager<IdentityUser> signInManager, 
-            UserManager<IdentityUser> userManager,
+        public AccountController(SignInManager<Usuario> signInManager, 
+            UserManager<Usuario> userManager,
+            RoleManager<IdentityRole> roleManager,
             CampusContext context) {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
             _context = context;
         }
 
-        public IActionResult Ingresar()
+        public async Task<IActionResult> Ingresar()
         {
-
+            var CurrentUser = await _userManager.GetUserAsync(User);
+            if (CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
         [HttpPost]
@@ -46,8 +54,22 @@ namespace CampusVirtual.Controllers
             return View();
         }
 
-        public IActionResult Registrar() {
-            return View();
+        public async Task<IActionResult> Registrar() {
+            var CurrentUser = await _userManager.GetUserAsync(User);
+            var list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text="Estudiante", Value="Estudiante"});
+            if (CurrentUser != null)
+            {
+                var Roles = await _userManager.GetRolesAsync(CurrentUser);
+                if (Roles.Contains("Administrador"))
+                {
+                    list.Add(new SelectListItem() { Text = "Profesor", Value = "Profesor" });
+                }
+                else {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View(new RegistrarViewModel() { TipoUsuarios = list});
         }
 
         [HttpPost]
@@ -55,14 +77,13 @@ namespace CampusVirtual.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser() { UserName = registrarViewModel.Nombre };
+                var user = new Usuario() { UserName = registrarViewModel.Nombre };
                 var result = await _userManager.CreateAsync(user, registrarViewModel.Clave);
                 if (result.Succeeded) {
-                    _context.TipoUsuarios.Add(new TipoUsuario() {
-                        Tipo = registrarViewModel.TipoUsuario,
-                        UsuarioId = user.Id
-                    });
-                    _context.SaveChanges();
+                    if (!await _roleManager.RoleExistsAsync(registrarViewModel.TipoUsuario)) {
+                        await _roleManager.CreateAsync(new IdentityRole(registrarViewModel.TipoUsuario));
+                    }
+                    await _userManager.AddToRoleAsync(user, registrarViewModel.TipoUsuario);
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -72,6 +93,10 @@ namespace CampusVirtual.Controllers
         public async Task<IActionResult> Salir() {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Ingresar");
+        }
+
+        public IActionResult AccessDenied() {
+            return RedirectToAction("Index", "Home");
         }
     }
 }

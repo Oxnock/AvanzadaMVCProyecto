@@ -1,0 +1,20 @@
+﻿@model CampusVirtual.ViewModels.CursoViewModels.CrearViewModel
+@{
+    ViewBag.Title = "Crear Curso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Crear Curso</h2>
+<form asp-action="Crear" asp-controller="Curso" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" />
+            <span asp-validation-for="Nombre"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Crear" />
+    </div>
+</form>

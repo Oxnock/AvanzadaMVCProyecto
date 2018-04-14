@@ -6,16 +6,6 @@
 
   <ItemGroup>
     <Compile Remove="Model\Entities\UsuarioCursoAsistencia.cs" />
-    <Compile Remove="Views\Shared\_LoginPartial.cshtml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Views\Shared\_Layout - Copy.cshtml" />
-    <Content Remove="Views\Shared\_LoginPartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Views\Shared\_LoginPartial.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,16 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
-    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
-    <None Include="wwwroot\lib\bootstrap\dist\js\npm.js" />
-    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <Folder Include="ViewModels\AsistenciaViewModels\" />
   </ItemGroup>
 
 </Project>

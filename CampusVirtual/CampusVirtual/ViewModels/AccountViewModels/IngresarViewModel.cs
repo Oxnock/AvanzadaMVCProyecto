@@ -8,12 +8,12 @@ namespace CampusVirtual.ViewModels.AccountViewModels
 {
     public class IngresarViewModel
     {
-       
+        [Required]
         [Display(Name = "Usuario")]
         public string Nombre { get; set; }
-        
+        [Required]
         [Display(Name = "Contraseña")]
-      //  [DataType(DataType.Password)]
+        [DataType(DataType.Password)]
         public string Clave { get; set; }
     }
 }

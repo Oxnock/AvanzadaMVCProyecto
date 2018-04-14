@@ -8,7 +8,7 @@ namespace CampusVirtual.Model.Entities
     public class UsuarioCurso
     {
         public int UsuarioCursoId { get; set; }
-        public Curso Curso { get; set; }
-        public string UsuarioId { get; set; }
+        public virtual Curso Curso { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

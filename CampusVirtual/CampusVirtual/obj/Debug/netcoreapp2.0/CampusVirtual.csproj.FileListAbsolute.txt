@@ -1,14 +1,3 @@
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.deps.json
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.json
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.dev.json
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.dll
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csprojResolveAssemblyReference.cache
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csproj.CoreCompileInputs.cache
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfoInputs.cache
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.pdb
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
-C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.deps.json
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.json
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.dev.json
@@ -20,12 +9,6 @@ C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtua
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
 C:\Users\Alfredo\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csprojResolveAssemblyReference.cache
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csproj.CoreCompileInputs.cache
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfoInputs.cache
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
-C:\Users\jose\Documents\GitHub\AvanzadaMVC\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.deps.json
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.json
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.dev.json
@@ -37,3 +20,25 @@ C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
 C:\Users\ADMIN\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.deps.json
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.json
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.dev.json
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.dll
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csprojResolveAssemblyReference.cache
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csproj.CoreCompileInputs.cache
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfoInputs.cache
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
+C:\Users\Alfredo V\Documents\GitHub\AvanzadaMVCProyecto\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.deps.json
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.json
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.runtimeconfig.dev.json
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.dll
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\bin\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csproj.CoreCompileInputs.cache
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfoInputs.cache
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.AssemblyInfo.cs
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.dll
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.pdb
+C:\Users\Tom Riddle\Desktop\CampusVirtual\CampusVirtual\obj\Debug\netcoreapp2.0\CampusVirtual.csprojResolveAssemblyReference.cache

@@ -10,7 +10,7 @@ namespace CampusVirtual.Model.Entities
         public int AsistenciaId { get; set; }
         public bool Asistio { get; set; }
         public DateTime Fecha { get; set; }
-        public string UsuarioId { get; set; }
-        public Curso Curso { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual Curso Curso { get; set; }
     }
 }

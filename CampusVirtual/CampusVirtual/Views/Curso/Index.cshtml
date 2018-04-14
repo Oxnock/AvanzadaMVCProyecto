@@ -1,30 +1,84 @@
-﻿@model CampusVirtual.ViewModels.Curso.Index
+﻿@model CampusVirtual.ViewModels.CursoViewModels.IndexViewModel
 @{
-	Layout = "~/Views/Shared/_layout.cshtml";
-	ViewBag.Title = Model.Title;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+<h2>Index</h2>
+
+@if (User.IsInRole("Administrador"))
+{
+    <h2>Administrar Cursos</h2>
+    <a asp-action="Crear" asp-controller="Curso">Crear</a>
 }
 
-		<div class="container container-menu">
-			<h4 class="titleheaders">Mis cursos</h4>
-			<div class="list-group">
-				<table>
-					<thead>
-						<tr>
-							<th>Nombre</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach (var Curso in Model.List)
-			{
-						<tr>
-						@*no se cono hacer para mandarlo a esta parte
-							normalmente lo que haria seria llamar al controller de la vista y q vaya por el id del curso*@
-							<td href="programacion.html" class="list-group-item list-group-item-action"> @Curso.Nombre</td>
-						
-						</tr>
+@if (User.IsInRole("Profesor"))
+{
+    <h2>Cursos Asignados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+                @if (User.IsInRole("Administrador"))
+                {
+                    <th>Opciones</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var curso in Model.Cursos)
+            {
+                <tr>
+                    <td>
+                        @curso.Nombre
+                    </td>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td>
+                            <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
-					</tbody>
-				</table>
-			</div>
-			</div>
+@if (User.IsInRole("Estudiante"))
+{
+    <a asp-action="Matricular" asp-controller="Curso">Matricular Cursos</a>
+    <h2>Cursos Matriculados</h2>
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Curso</th>
+            @if (User.IsInRole("Administrador"))
+            {
+                <th>Opciones</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var curso in Model.Cursos)
+        {
+            <tr>
+                <td>
+                    @curso.Nombre
+                </td>
+                @if (User.IsInRole("Administrador"))
+                {
+                    <td>
+                        <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
+                        <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

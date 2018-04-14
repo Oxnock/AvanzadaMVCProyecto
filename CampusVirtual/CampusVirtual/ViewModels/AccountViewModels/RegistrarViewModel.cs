@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace CampusVirtual.ViewModels.AccountViewModels
         [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
         public string Clave { get; set; }
+        [Display(Name = "Tipos de usuario")]
+        public List<SelectListItem> TipoUsuarios { get; set; }
         [Required]
-        [Display(Name = "Tipo de usuario")]
         public string TipoUsuario { get; set; }
     }
 }
