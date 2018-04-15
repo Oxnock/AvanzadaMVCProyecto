@@ -1,6 +1,6 @@
 ﻿//Password validation
-$(function () {
-    $('.form-login').submit(function (event) {
+jQuery(function () {
+    $('.password').keyup(function (event) {
         var input2 = $(this).children('.usuario').val();
         console.log(input2);
         $.trim(".usuario.html()");
