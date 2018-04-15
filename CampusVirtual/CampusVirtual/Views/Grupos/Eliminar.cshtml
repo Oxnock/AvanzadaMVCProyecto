@@ -1,0 +1,39 @@
+﻿@model CampusVirtual.ViewModels.GrupoViewModels.EliminarViewModel
+@{
+	ViewData["Title"] = "Eliminar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar este grupo?</h3>
+<div>
+	<h4>Mascota</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Group.GruposId)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Group.GruposId)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Group.Materia)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Group.Materia)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Group.Horario)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Group.Horario)
+		</dd>
+	</dl>
+
+	<form asp-action="Delete">
+		<input type="hidden" asp-for="Group.GruposId" />
+		<input type="submit" value="Eliminar" class="btn btn-primary" /> |
+		<a asp-action="Index">Volver a Cursos</a>
+	</form>
+</div>

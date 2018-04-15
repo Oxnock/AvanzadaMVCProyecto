@@ -1,0 +1,58 @@
+﻿@model CampusVirtual.ViewModels.GrupoViewModels.EditarViewModel
+@{
+	ViewBag.Title = "Editar Curso ";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar Curso</h2>
+<form asp-action="Editar" asp-controller="Curso" method="post">
+	<div asp-validation-summary="All"></div>
+	<div>
+		<label asp-for="NumeroGrupo"></label>
+		<div>
+			<input asp-for="NumeroGrupo" value="@Model.Grupo.NumeroGrupo" />
+			<span asp-validation-for="NumeroGrupo"></span>
+		</div>
+		<div>
+		<input asp-for="Horario" value="@Model.Grupo.Horario" />
+		<table>
+			<tbody>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='LM'>Lunes-Mañana  </td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='LT'>Lunes-Tarde  </td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='LN'>Lunes-Noche  </td>
+				</tr>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='KM'>Martes-Mañana</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='KT'>Martes-Tarde</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='KN'>Martes-Noche </td>
+				</tr>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='MM'>Miércoles-Mañana</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='MT'>Miércoles-Tarde</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='MN'>Miércoles-Noche</td>
+				</tr>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='JM'>Jueves-Mañana</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='JT'>Jueves-Tarde</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='JN'>Jueves-Noche  </td>
+				</tr>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='VM'>Viernes-Mañana</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='VT'>Viernes-Tarde</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='VN'>Viernes-Noche </td>
+				</tr>
+				<tr>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='SM'>Sábado-Mañana</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='ST'>Sábado-Tarde</td>
+					<td><input type="radio" asp-for="Horario" name="idhorario" value='SN'>Sábado-Noche </td>
+				<tr>
+			<tbody>
+		</table>
+
+			</div>
+	</div>
+	<div>
+		<input type="submit" value="Editar" />
+	</div>
+</form>

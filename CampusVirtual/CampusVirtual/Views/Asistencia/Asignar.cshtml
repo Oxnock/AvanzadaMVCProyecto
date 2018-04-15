@@ -1,0 +1,39 @@
+﻿@model CampusVirtual.ViewModels.AsistenciaViewModels.AsignarViewModel
+@{
+	ViewBag.Title = "Asignar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+
+<h2>Asignar</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Asistencia</th>
+			@if (User.IsInRole("Administrador"))
+			{
+				<th>Opciones</th>
+			}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var vList in Model.Lista)
+		{
+			<tr>
+				<td>
+					@vList.Usuario.UserName
+				</td>
+
+			<td>
+							<input type="checkbox" asp-for="Asistio" /> @Html.DisplayNameFor(model => model.Asistio)
+				</td>
+				
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+
+

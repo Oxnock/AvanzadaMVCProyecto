@@ -1,0 +1,92 @@
+﻿@model CampusVirtual.ViewModels.GrupoViewModels.IndexViewModel
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+<h2>Index</h2>
+
+@if (User.IsInRole("Administrador"))
+{
+	<h2>Administrar Grupos</h2>
+	<a asp-action="Crear" asp-controller="Grupos">Crear</a>
+}
+
+@if (User.IsInRole("Profesor"))
+{
+	<h2>Grupos Asignados</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Curso</th>
+				@if (User.IsInRole("Administrador"))
+				{
+					<th>Opciones</th>
+				}
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var curso in Model.Grupo)
+			{
+			<tr>
+				<td>
+					@curso.Materia.Nombre
+				</td>
+				<td>
+					@curso.NumeroGrupo
+				</td>
+				<td>
+					@curso.Horario
+				</td>
+				@if (User.IsInRole("Administrador"))
+	{
+			<td>
+				<a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.GruposId">Editar</a>
+				<a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.GruposId">Eliminar</a>
+			</td>
+}
+			</tr>
+			}
+		</tbody>
+	</table>
+}
+
+<table>
+	<thead>
+		<tr>
+			<th>Curso</th>
+			@if (User.IsInRole("Administrador"))
+			{
+				<th>Opciones</th>
+			}
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var curso in Model.Grupo)
+		{
+		<tr>
+			<td>
+				@curso.Materia.Nombre
+			</td>
+			<td>
+				@curso.GruposId
+			</td>
+			<td>
+				@curso.NumeroGrupo
+			</td>
+			<td>
+				@curso.Horario
+			</td>
+			@if (User.IsInRole("Administrador"))
+	{
+		<td>
+			<a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.GruposId">Editar</a>
+			<a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.GruposId">Eliminar</a>
+		</td>
+}
+		</tr>
+		}
+	</tbody>
+</table>
