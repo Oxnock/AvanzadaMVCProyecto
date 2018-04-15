@@ -1,0 +1,34 @@
+﻿@model CampusVirtual.ViewModels.CarrerasViewModels.EliminarViewModel
+@{
+	ViewData["Title"] = "Eliminar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar este grupo?</h3>
+<div>
+	<h4>Mascota</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Carrera.CarrerasId)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Carrera.CarrerasId)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Carrera.Nombre)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Carrera.Nombre)
+		</dd>
+	
+	</dl>
+
+	<form asp-action="Delete">
+		<input type="hidden" asp-for="Carrera.CarrerasId" />
+		<input type="submit" value="Eliminar" class="btn btn-primary" /> |
+		<a asp-action="Index">Volver a Cursos</a>
+	</form>
+</div>
