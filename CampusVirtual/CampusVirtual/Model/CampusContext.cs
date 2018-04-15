@@ -20,6 +20,7 @@ namespace CampusVirtual.Model
         public DbSet<Usuario> Usuarios { get; set; }
 		public DbSet<Grupos> Grupos { get; set; }
 		public DbSet<Carreras> Carreras { get; set; }
+		public DbSet<Beca> Becas { get; set; }
 		protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -42,6 +42,26 @@ namespace CampusVirtual.Migrations
                     b.ToTable("Asistencias");
                 });
 
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Carreras", b =>
+                {
+                    b.Property<int>("CarrerasId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descripcion");
+
+                    b.Property<string>("Director");
+
+                    b.Property<string>("Director1Id");
+
+                    b.Property<string>("Nombre");
+
+                    b.HasKey("CarrerasId");
+
+                    b.HasIndex("Director1Id");
+
+                    b.ToTable("Carreras");
+                });
+
             modelBuilder.Entity("CampusVirtual.Model.Entities.Curso", b =>
                 {
                     b.Property<int>("CursoId")
@@ -68,6 +88,24 @@ namespace CampusVirtual.Migrations
                     b.HasIndex("CursoId");
 
                     b.ToTable("Evaluaciones");
+                });
+
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Grupos", b =>
+                {
+                    b.Property<int>("GruposId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Horario");
+
+                    b.Property<int?>("MateriaCursoId");
+
+                    b.Property<int>("NumeroGrupo");
+
+                    b.HasKey("GruposId");
+
+                    b.HasIndex("MateriaCursoId");
+
+                    b.ToTable("Grupos");
                 });
 
             modelBuilder.Entity("CampusVirtual.Model.Entities.Nota", b =>
@@ -276,11 +314,25 @@ namespace CampusVirtual.Migrations
                         .HasForeignKey("UsuarioId");
                 });
 
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Carreras", b =>
+                {
+                    b.HasOne("CampusVirtual.Model.Entities.Usuario", "Director1")
+                        .WithMany()
+                        .HasForeignKey("Director1Id");
+                });
+
             modelBuilder.Entity("CampusVirtual.Model.Entities.Evaluacion", b =>
                 {
                     b.HasOne("CampusVirtual.Model.Entities.Curso", "Curso")
                         .WithMany("Evaluaciones")
                         .HasForeignKey("CursoId");
+                });
+
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Grupos", b =>
+                {
+                    b.HasOne("CampusVirtual.Model.Entities.Curso", "Materia")
+                        .WithMany()
+                        .HasForeignKey("MateriaCursoId");
                 });
 
             modelBuilder.Entity("CampusVirtual.Model.Entities.Nota", b =>
