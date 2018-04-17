@@ -14,8 +14,15 @@
     background: linear-gradient(to right, rgb(0, 163, 197) 1%, rgb(171, 206, 53) 100%);
 }
 
-/* button */
-.btn-submit {
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    font-size: 22px;
+}
+
+    /* button */
+    .btn-submit {
+    margin-top: 20px;
     background-color: #007bff;
     border-color: #007bff;
 }
@@ -23,6 +30,10 @@
 .btn-submit:hover {
     background-color: #0069d9;
     border-color: #0062cc;
+}
+
+.FontAwesome {
+    color: white
 }
 
 /**navbar*/

@@ -16,14 +16,14 @@ namespace CampusVirtual.Model
 			{
 				context.AddRange
 				(
-					new Curso() { Nombre = "Introducción a la Informática" },
-					new Curso() { Nombre = "Inglés I" },
-					new Curso() { Nombre = "Programación I" },
-					new Curso() { Nombre = "Cálculo I" },
-					new Curso() { Nombre = "Bases de Datos I" },
-					new Curso() { Nombre = "Biología" },
-					new Curso() { Nombre = "Física" },
-					new Curso() { Nombre = "Psicología" }
+					new Curso() { Nombre = "Introducción a la Informática", Codigo = "INF-I" },
+					new Curso() { Nombre = "Inglés I", Codigo = "ING-I" },
+					new Curso() { Nombre = "Programación I", Codigo = "PRG-I" },
+					new Curso() { Nombre = "Cálculo I", Codigo = "CLC-I" },
+					new Curso() { Nombre = "Bases de Datos I", Codigo = "BDT-I" },
+					new Curso() { Nombre = "Biología", Codigo = "BIO-I" },
+					new Curso() { Nombre = "Física", Codigo = "FIS-I" },
+					new Curso() { Nombre = "Psicología", Codigo = "PSI-I" }
 				);
 				context.SaveChanges();
 

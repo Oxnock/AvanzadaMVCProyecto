@@ -12,7 +12,9 @@ namespace CampusVirtual.ViewModels.CarrerasViewModels
 		public string Nombre { get; set; }
 		[Required]
 		public int Id { get; set; }
-		[Required]
+        [Required]
+        public string Codigo { get; set; } //add
+        [Required]
 		public string Descripcion { get; set; }
 		[Required]
 		public string Director { get; set; }

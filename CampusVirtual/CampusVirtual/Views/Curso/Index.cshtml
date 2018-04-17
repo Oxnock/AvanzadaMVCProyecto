@@ -1,29 +1,31 @@
 ﻿@model CampusVirtual.ViewModels.CursoViewModels.IndexViewModel
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @inject SignInManager<Usuario> SignInManager
 
-<h2>Index</h2>
 
 @if (User.IsInRole("Administrador"))
-{
-    <h2>Administrar Cursos</h2>
-    <a asp-action="Crear" asp-controller="Curso">Crear</a>
-}
+    {
+<h2>Administrar Cursos</h2>
+<a asp-action="Crear" asp-controller="Curso">Crear curso</a>
+} 
 
 @if (User.IsInRole("Profesor"))
 {
     <h2>Cursos Asignados</h2>
 
-    <table>
+    <table class="dataTable table table-striped table-bordered display" cellspacing="0" id="myTable">
+
         <thead>
             <tr>
                 <th>Curso</th>
+                <th>Codigo</th>
                 @if (User.IsInRole("Administrador"))
-                {
-                    <th>Opciones</th>
+                    {
+                <th>Opciones</th>
                 }
             </tr>
         </thead>
@@ -34,12 +36,15 @@
                     <td>
                         @curso.Nombre
                     </td>
+                    <td>
+                        @curso.Codigo
+                    </td>
                     @if (User.IsInRole("Administrador"))
-                    {
-                        <td>
-                            <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
-                            <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
-                        </td>
+                        {
+                    <td>
+                        <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
+                        <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                    </td>
                     }
                 </tr>
             }
@@ -48,20 +53,22 @@
 }
 
 @if (User.IsInRole("Estudiante"))
-{
-    <a asp-action="Matricular" asp-controller="Curso">Matricular Cursos</a>
-    <h2>Cursos Matriculados</h2>
-}
+    {
+        <a asp-action="Matricular" asp-controller="Curso">Matricular Cursos</a>
+        <h2>Cursos Matriculados</h2>
+    }
 
 
-<table>
+        <h2>Cursos</h2>
+<table class="dataTable table table-striped table-bordered display" cellspacing="0" id="table_id">
     <thead>
         <tr>
             <th>Curso</th>
+            <th>Codigo</th>
             @if (User.IsInRole("Administrador"))
-            {
-                <th>Opciones</th>
-            }
+                {
+            <th>Opciones</th>
+             } 
         </tr>
     </thead>
     <tbody>
@@ -71,13 +78,16 @@
                 <td>
                     @curso.Nombre
                 </td>
+                <td>
+                    @curso.Codigo
+                </td>
                 @if (User.IsInRole("Administrador"))
-                {
-                    <td>
-                        <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
-                        <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
-                    </td>
-                }
+                    {
+                <td>
+                    <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
+                    <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                </td>
+                 }
             </tr>
         }
     </tbody>

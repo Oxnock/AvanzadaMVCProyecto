@@ -17,5 +17,7 @@ namespace CampusVirtual.ViewModels.CursoViewModels
         [Required]
         [Display(Name = "Nombre del curso")]
         public string Nombre { get; set; }
+        [Required]
+        public string Codigo { get; set; } //add
     }
 }

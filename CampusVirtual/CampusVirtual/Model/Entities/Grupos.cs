@@ -7,7 +7,7 @@ namespace CampusVirtual.Model.Entities
 {
     public class Grupos
     {
-	public Curso Materia { get; set; } 
+	public Curso Materia { get; set; } //GetNombreMateria, GetCodigo
 	public int GruposId { get; set; }
 	public int NumeroGrupo { get; set; }
 	public string Horario { get; set; }

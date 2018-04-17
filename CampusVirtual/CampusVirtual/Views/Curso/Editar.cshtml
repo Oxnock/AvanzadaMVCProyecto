@@ -10,13 +10,18 @@
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" value="@Model.Curso.Nombre"/>
+            <input asp-for="Nombre" value="@Model.Curso.Nombre" />
             <span asp-validation-for="Nombre"></span>
         </div>
-        <input asp-for="Id" value="@Model.Curso.CursoId" hidden/>
+        <div>
+            <input asp-for="Codigo" value="@Model.Curso.Codigo" />
+            <span asp-validation-for="Codigo"></span>
+        </div>
+        <input asp-for="Id" value="@Model.Curso.CursoId" hidden />
     </div>
     <div>
         <input type="submit" value="Editar" />
     </div>
 </form>
+
 

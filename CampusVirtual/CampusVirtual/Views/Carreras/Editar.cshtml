@@ -7,22 +7,26 @@
 <h2>Editar Curso</h2>
 <form asp-action="Editar" asp-controller="Carreras" method="post">
 	<div asp-validation-summary="All"></div>
-	<div>
-		<label asp-for="Nombre"></label>
-		<div>
-			<input asp-for="Nombre" value="@Model.Nombre" />
-			<span asp-validation-for="Nombre"></span>
-		</div>
-		<div>
-			<input asp-for="Descripcion" value="@Model.Descripcion" />
-			<span asp-validation-for="Descripcion"></span>
-		</div>
-		<div>
-			<input asp-for="Director" value="@Model.Director" />
-			<span asp-validation-for="Director"></span>
-		</div>
-	
-	</div>
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" value="@Model.Nombre" />
+            <span asp-validation-for="Nombre"></span>
+        </div>
+        <div>
+            <input asp-for="Codigo" value="@Model.Codigo" />
+            <span asp-validation-for="Codigo"></span>
+        </div>
+        <div>
+            <input asp-for="Descripcion" value="@Model.Descripcion" />
+            <span asp-validation-for="Descripcion"></span>
+        </div>
+        <div>
+            <input asp-for="Director" value="@Model.Director" />
+            <span asp-validation-for="Director"></span>
+        </div>
+
+    </div>
 	<div>
 		<input type="submit" value="Editar" />
 	</div>

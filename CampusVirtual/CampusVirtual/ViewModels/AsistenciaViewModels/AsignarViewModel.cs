@@ -17,6 +17,7 @@ namespace CampusVirtual.ViewModels.AsistenciaViewModels
 		public virtual Usuario Usuario { get; set; }
 
 		public virtual Curso Curso { get; set; }
-		public Asistencia Lista { get; set; }
+      //  public virtual ICollection<Asistencia> Lista { get; set; }
+       public Asistencia Lista { get; set; }
 	}
 }

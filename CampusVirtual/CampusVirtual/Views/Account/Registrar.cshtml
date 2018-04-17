@@ -4,9 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <h2>Registrar</h2>
 <form asp-action="Registrar" asp-controller="Account" method="post">
-    <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Nombre"></label>
         <div>
@@ -25,9 +26,10 @@
         <label asp-for="TipoUsuarios"></label>
         <div>
             <select asp-for="TipoUsuario" asp-items="@Model.TipoUsuarios"></select>
+            <span asp-validation-for="TipoUsuario"></span>
         </div>
     </div>
     <div>
-        <input type="submit" value="Registrar" />
+        <button type="button" value="Registrar" class="btn btn-primary btn-md btn-submit"/> Registrar </button>
     </div>
 </form>

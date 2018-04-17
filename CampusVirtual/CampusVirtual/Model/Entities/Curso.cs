@@ -14,6 +14,7 @@ namespace CampusVirtual.Model.Entities
 
         public int CursoId { get; set; }
         public string Nombre { get; set; }
+        public string Codigo { get; set; } //add
         public virtual ICollection<UsuarioCurso> UsuarioCursos { get; set; }
         public virtual ICollection<Evaluacion> Evaluaciones { get; set; }
     }
