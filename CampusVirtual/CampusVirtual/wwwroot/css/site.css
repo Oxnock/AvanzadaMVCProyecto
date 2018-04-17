@@ -14,15 +14,37 @@
     background: linear-gradient(to right, rgb(0, 163, 197) 1%, rgb(171, 206, 53) 100%);
 }
 
-h1 {
-    margin: 0;
-    padding: 0 0 20px;
+.title{
+    margin-top: 25px;
+    padding: 0 0 10px;
     font-size: 22px;
 }
 
-    /* button */
-    .btn-submit {
-    margin-top: 20px;
+.lbl-block {
+    width: 25%;
+    height: 10%;
+    padding: 10px 12px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+span {
+ text-align:left;
+ color: red;
+}
+
+
+.FontAwesome {
+    color: white
+}
+
+/* button */
+.btn-submit {
+    margin-bottom: 20px;
+    margin-top: 5px;
     background-color: #007bff;
     border-color: #007bff;
 }
@@ -32,9 +54,6 @@ h1 {
     border-color: #0062cc;
 }
 
-.FontAwesome {
-    color: white
-}
 
 /**navbar*/
 .navbar-inverse .navbar-nav > li > a {
@@ -76,9 +95,5 @@ border: none;
     .carousel-caption {
         display: none;
     }
-}
-
-.margin{
-    margin-top: 20px;
 }
 

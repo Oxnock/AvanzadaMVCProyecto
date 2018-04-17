@@ -7,68 +7,70 @@
 @inject SignInManager<Usuario> SignInManager
 
 
-@if (User.IsInRole("Administrador"))
-    {
-<h2>Administrar Cursos</h2>
-<a asp-action="Crear" asp-controller="Curso">Crear curso</a>
-} 
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
-@if (User.IsInRole("Profesor"))
-{
-    <h2>Cursos Asignados</h2>
+@*@if (User.IsInRole("Administrador"))*@
+@*  {*@
+<h2 class="title">Administrar Cursos</h2>
+<a asp-action="Crear" asp-controller="Curso" class="btn btn-primary btn-md btn-submit">Crear curso</a>
+@* } *@
 
-    <table class="dataTable table table-striped table-bordered display" cellspacing="0" id="myTable">
+@*@if (User.IsInRole("Profesor"))
+        {
+    <h2 class="title">Cursos Asignados</h2>
 
-        <thead>
-            <tr>
-                <th>Curso</th>
-                <th>Codigo</th>
-                @if (User.IsInRole("Administrador"))
+            <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Codigo</th>
+                        @if (User.IsInRole("Administrador"))
+                            {
+                        <th>Opciones</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var curso in Model.Cursos)
                     {
-                <th>Opciones</th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var curso in Model.Cursos)
-            {
-                <tr>
-                    <td>
-                        @curso.Nombre
-                    </td>
-                    <td>
-                        @curso.Codigo
-                    </td>
-                    @if (User.IsInRole("Administrador"))
-                        {
-                    <td>
-                        <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
-                        <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
-                    </td>
+                        <tr>
+                            <td>
+                                @curso.Nombre
+                            </td>
+                            <td>
+                                @curso.Codigo
+                            </td>
+                            @if (User.IsInRole("Administrador"))
+                                {
+                            <td>
+                                <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                            </td>
+                            }
+                        </tr>
                     }
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+                </tbody>
+            </table>
+        }*@
 
-@if (User.IsInRole("Estudiante"))
-    {
-        <a asp-action="Matricular" asp-controller="Curso">Matricular Cursos</a>
-        <h2>Cursos Matriculados</h2>
-    }
+@*@if (User.IsInRole("Estudiante"))
+        {
+    <a asp-action="Matricula" asp-controller="Curso" class="btn btn-primary btn-md btn-submit"> Matricular Cursos</a>
+    <h2 class="title">Cursos Matriculados</h2>
+      }*@
 
 
-        <h2>Cursos</h2>
-<table class="dataTable table table-striped table-bordered display" cellspacing="0" id="table_id">
+@*<h2 class="title">Cursos</h2>*@
+<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="table_id">
     <thead>
         <tr>
             <th>Curso</th>
             <th>Codigo</th>
-            @if (User.IsInRole("Administrador"))
-                {
+            @*@if (User.IsInRole("Administrador"))
+                {*@
             <th>Opciones</th>
-             } 
+            @*}*@
         </tr>
     </thead>
     <tbody>
@@ -81,13 +83,13 @@
                 <td>
                     @curso.Codigo
                 </td>
-                @if (User.IsInRole("Administrador"))
-                    {
+                @*@if (User.IsInRole("Administrador"))
+                    {*@
                 <td>
-                    <a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId">Editar</a>
-                    <a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId">Eliminar</a>
+                    <a class="btn btn-warning btn-md" asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CursoId"> <i class="FontAwesome fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-md" asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CursoId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
                 </td>
-                 }
+                @*}*@
             </tr>
         }
     </tbody>

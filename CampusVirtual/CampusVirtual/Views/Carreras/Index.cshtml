@@ -5,26 +5,25 @@
 }
 @inject SignInManager<Usuario> SignInManager
 
-<h2>Index</h2>
 
-@if (User.IsInRole("Administrador"))
-{
-	<h2>Administrar Cursos</h2>
-	<a asp-action="Crear" asp-controller="Curso">Crear</a>
+@*@if (User.IsInRole("Administrador"))
+{*@
+	<h2 class="title">Administrar Cursos</h2>
+	<a asp-action="Crear" asp-controller="Curso"  class="btn btn-primary btn-md btn-submit">Crear carrera</a>
 }
 
-@if (User.IsInRole("Profesor"))
-{
-	<h2>Carreras</h2>
+@*@if (User.IsInRole("Profesor"))
+{*@
+	<h2 class="title">Carreras</h2>
 
 	<table>
 		<thead>
 			<tr>
 				<th>Curso</th>
-				@if (User.IsInRole("Administrador"))
-				{
+				@*@if (User.IsInRole("Administrador"))
+				{*@
 					<th>Opciones</th>
-				}
+				@*}*@
 			</tr>
 		</thead>
 		<tbody>
@@ -40,22 +39,22 @@
 				<td>
 					@curso.Director
 				</td>
-				@if (User.IsInRole("Administrador"))
-	{
+				@*@if (User.IsInRole("Administrador"))
+	{*@
 			<td>
 				<a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CarrerasId">Editar</a>
 				<a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CarrerasId">Eliminar</a>
 			</td>
-}
+@*}*@
 			</tr>
 			}
 		</tbody>
 	</table>
-}
+@*}*@
 
-@if (User.IsInRole("Estudiante"))
+@*@if (User.IsInRole("Estudiante"))
 {
-	<h2>Carreras</h2>
+	<h2 class="title">Carreras</h2>
 
 	<table>
 		<thead>
@@ -81,7 +80,7 @@
 			</tr>
 			}
 		</tbody>
-	</table>
+	</table>*@
 }
 
 

@@ -4,24 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Crear Curso</h2>
+<h2 class="title">Crear Curso</h2>
 <form asp-action="Crear" asp-controller="Curso" method="post">
-    <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" />
-            <span asp-validation-for="Nombre"></span>
+            <input asp-for="Nombre" class="lbl-block" />
+            <div>
+                <span asp-validation-for="Nombre"></span>
+            </div>
         </div>
     </div>
     <div>
         <label asp-for="Codigo"></label>
         <div>
-            <input asp-for="Codigo" />
-            <span asp-validation-for="Codigo"></span>
+            <input asp-for="Codigo" class="lbl-block" />
+            <div>
+                <span asp-validation-for="Codigo"></span>
+            </div>
         </div>
     </div>
     <div>
-        <input type="submit" value="Crear" />
+        <input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit" />
     </div>
 </form>

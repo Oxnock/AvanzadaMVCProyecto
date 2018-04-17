@@ -2,7 +2,7 @@
 @using CampusVirtual.Model.Entities
 
 @inject SignInManager<Usuario> SignInManager
-@*@inject UserManager<Usuario> UserManager*@
+@inject UserManager<Usuario> UserManager
 
 
 <!DOCTYPE html>
@@ -39,22 +39,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area=""x` class="navbar-brand">Universidad</a>
+                <a asp-area=""  class="navbar-brand">Universidad</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Curso" asp-action="Index">Index</a></li>
-                    <li><a asp-area="" asp-controller="Curso" asp-action="Crear">Crear</a></li>\
+                    <li><a asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a></li>
+                    <li><a asp-area="" asp-controller="Carreras" asp-action="Index">Carreras</a></li>
 
                 </ul>
 
                 <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
                     <ul class="nav navbar-nav navbar-right">
-                        @*<li>
-                    <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-                </li>*@
-                        <li><a asp-area="" asp-controller="Account" asp-action="Ingresar">Salir</a></li>
+                        <li>
+                            <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">@UserManager.GetUserName(User)</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Account" asp-action="Ingresar">Salir</a>
+                        </li>
                     </ul>
                 </form>
 
