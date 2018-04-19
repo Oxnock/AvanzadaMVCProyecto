@@ -10,6 +10,69 @@
     padding-right: 15px;
 }
 
+.background-gradient {
+    background: linear-gradient(to right, rgb(0, 163, 197) 1%, rgb(171, 206, 53) 100%);
+}
+
+.title{
+    margin-top: 25px;
+    padding: 0 0 10px;
+    font-size: 22px;
+}
+
+.lbl-block {
+    width: 25%;
+    height: 10%;
+    padding: 10px 12px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+span {
+ text-align:left;
+ color: red;
+}
+
+
+.FontAwesome {
+    color: white
+}
+
+/* button */
+.btn-submit {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-submit:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+
+/**navbar*/
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse {
+border: none;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-link {
+    color: #fff;
+}
+
+
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -33,3 +96,4 @@
         display: none;
     }
 }
+

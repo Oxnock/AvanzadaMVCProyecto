@@ -23,11 +23,11 @@ namespace CampusVirtual.Controllers
 			_userManager = userManager;
 		}
 
-		[Authorize]
+		//[Authorize]
 		public async Task<IActionResult> Index()
 		{
-			var CurrentUser = await _userManager.GetUserAsync(User);
-			var Roles = await _userManager.GetRolesAsync(CurrentUser);
+		//	var CurrentUser = await _userManager.GetUserAsync(User);
+			//var Roles = await _userManager.GetRolesAsync(CurrentUser);
 
 			//if (Roles.Contains("Administrador"))
 			//{
@@ -36,13 +36,13 @@ namespace CampusVirtual.Controllers
 
 		}
 
-		[Authorize(Roles = "Administrador")]
+		//[Authorize(Roles = "Administrador")]
 		public IActionResult Crear()
 		{
 			return View();
 		}
 
-		[Authorize(Roles = "Administrador")]
+	//	[Authorize(Roles = "Administrador")]
 		[HttpPost]
 		public IActionResult Crear(CrearViewModel crearViewModel)
 		{
@@ -52,7 +52,10 @@ namespace CampusVirtual.Controllers
 			}
 			if (!_context.Carreras.Any(c => c.Nombre == crearViewModel.Nombre))
 			{
-				_context.Carreras.Add(new Carreras() { Nombre = crearViewModel.Nombre,Descripcion=crearViewModel.Descripcion,Director=crearViewModel.Director });
+				_context.Carreras.Add(new Carreras() { Nombre = crearViewModel.Nombre,
+                                                        Codigo = crearViewModel.Codigo,
+                                                        Descripcion =crearViewModel.Descripcion,
+                                                        Director =crearViewModel.Director});
 				_context.SaveChanges();
 				return RedirectToAction("Index");
 			}
@@ -60,7 +63,7 @@ namespace CampusVirtual.Controllers
 			return View();
 		}
 
-		[Authorize(Roles = "Administrador")]
+		//[Authorize(Roles = "Administrador")]
 		public IActionResult Eliminar(int id)
 		{
 			var Curso = _context.Carreras.Find(id);
@@ -72,7 +75,7 @@ namespace CampusVirtual.Controllers
 			return RedirectToAction("Index");
 		}
 
-		[Authorize(Roles = "Administrador")]
+		//[Authorize(Roles = "Administrador")]
 		public IActionResult Editar(int id)
 		{
 			return View(new EditarViewModel()
@@ -82,7 +85,7 @@ namespace CampusVirtual.Controllers
 		}
 
 
-		[Authorize(Roles = "Administrador")]
+//		[Authorize(Roles = "Administrador")]
 		[HttpPost]
 		public IActionResult Editar(EditarViewModel model)
 		{
@@ -91,6 +94,7 @@ namespace CampusVirtual.Controllers
 			if (Curso != null)
 			{
 				Curso.Nombre = model.Nombre;
+                Curso.Codigo = model.Codigo;
 				Curso.Descripcion = model.Descripcion;
 				Curso.Director = model.Director;
 				_context.SaveChanges();

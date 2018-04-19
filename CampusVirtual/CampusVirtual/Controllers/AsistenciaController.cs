@@ -20,7 +20,8 @@ namespace CampusVirtual.Controllers
 			//return View(new IndexViewModel() { Lista = _context.Asistencias.ToList() });
 			return View();
         }
-		[Authorize(Roles = "Administrador")]
+
+		//[Authorize(Roles = "Administrador")]
 		public IActionResult Asignar(int id)
 		{
 			return View(new AsignarViewModel()
@@ -30,7 +31,7 @@ namespace CampusVirtual.Controllers
 		}
 
 
-		[Authorize(Roles = "Administrador")]
+		//[Authorize(Roles = "Administrador")]
 		[HttpPost]
 		public IActionResult Asignar(AsignarViewModel model)
 		{

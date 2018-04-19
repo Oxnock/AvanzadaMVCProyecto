@@ -9,7 +9,7 @@ namespace CampusVirtual.ViewModels.BecaViewModels
 {
     public class IndexViewModel
     {
-		[Display(Name = "Lista de Becas")]
+		[Display(Name = "Lista de becas")]
 		public List<Beca> Becas{ get; set; }
 	}
 }

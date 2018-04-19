@@ -9,7 +9,7 @@ namespace CampusVirtual.Model.Entities
     {
         public int NotaId { get; set; }
         public string UsuarioId { get; set; }
-        public virtual Evaluacion Evaluacion { get; set; }
+        public virtual Evaluacion Evaluacion { get; set; } //GetNombreCurso
         public virtual Usuario Usuario { get; set; }
     }
 }

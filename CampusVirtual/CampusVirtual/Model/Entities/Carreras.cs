@@ -8,6 +8,7 @@ namespace CampusVirtual.Model.Entities
 	public class Carreras
 	{
 		public int CarrerasId { get; set; }
+        public string Codigo { get; set; } //add
 		public string Nombre { get; set; }
 		public string Descripcion{ get; set; }
 		public string Director { get; set; }

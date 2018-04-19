@@ -9,14 +9,15 @@ namespace CampusVirtual.ViewModels.AsistenciaViewModels
 {
     public class AsignarViewModel
     {
-		[Required]
-		public bool Asistio { get; set; }
-		[Required]
-		public DateTime Fecha { get; set; }
+        [Required(ErrorMessage = "El campo Asistencia es requerido")]
+        public bool Asistio { get; set; }
+        [Required(ErrorMessage = "Fecha requerida")]
+        public DateTime Fecha { get; set; }
 
 		public virtual Usuario Usuario { get; set; }
 
 		public virtual Curso Curso { get; set; }
-		public Asistencia Lista { get; set; }
+      //  public virtual ICollection<Asistencia> Lista { get; set; }
+       public Asistencia Lista { get; set; }
 	}
 }

@@ -42,10 +42,26 @@ namespace CampusVirtual.Migrations
                     b.ToTable("Asistencias");
                 });
 
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Beca", b =>
+                {
+                    b.Property<int>("BecaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nombre");
+
+                    b.Property<int>("Porcentaje");
+
+                    b.HasKey("BecaId");
+
+                    b.ToTable("Becas");
+                });
+
             modelBuilder.Entity("CampusVirtual.Model.Entities.Carreras", b =>
                 {
                     b.Property<int>("CarrerasId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Codigo");
 
                     b.Property<string>("Descripcion");
 
@@ -66,6 +82,8 @@ namespace CampusVirtual.Migrations
                 {
                     b.Property<int>("CursoId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Codigo");
 
                     b.Property<string>("Nombre");
 

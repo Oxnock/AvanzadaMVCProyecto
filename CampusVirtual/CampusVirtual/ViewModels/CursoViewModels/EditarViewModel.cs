@@ -14,8 +14,10 @@ namespace CampusVirtual.ViewModels.CursoViewModels
         [Required]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El nombre de curso es requerido")]
         [Display(Name = "Nombre del curso")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage = "El codigo de curso es requerido")]
+        public string Codigo { get; set; } //add
     }
 }

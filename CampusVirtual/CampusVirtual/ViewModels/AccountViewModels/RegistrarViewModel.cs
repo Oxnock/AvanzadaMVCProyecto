@@ -9,16 +9,19 @@ namespace CampusVirtual.ViewModels.AccountViewModels
 {
     public class RegistrarViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "El nombre del usuario es requerido")]
         [Display(Name = "Usuario")]
         public string Nombre { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "La contraseña es requerida")]
         [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
         public string Clave { get; set; }
+
         [Display(Name = "Tipos de usuario")]
         public List<SelectListItem> TipoUsuarios { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "El tipo de usuario es requerido")]
         public string TipoUsuario { get; set; }
     }
 }

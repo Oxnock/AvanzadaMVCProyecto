@@ -4,32 +4,39 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Crear Curso</h2>
+<h2 class="title">Crear Curso</h2>
 <form asp-action="Crear" asp-controller="Carreras" method="post">
-	<div asp-validation-summary="All"></div>
-	<div>
-		<label asp-for="Nombre"></label>
-		<div>
-			<input asp-for="Nombre" />
-			<span asp-validation-for="Nombre"></span>
-		</div>
-	</div>
-	<div>
-		<label asp-for="Descripcion"></label>
-		<div>
-			<input asp-for="Descripcion" />
-			<span asp-validation-for="Descripcion"></span>
-		</div>
-	</div>
-	<div>
-		<label asp-for="Director"></label>
-		<div>
-			<input asp-for="Director" />
-			<span asp-validation-for="Director"></span>
-		</div>
-	</div>
-	<div>
-		<input type="submit" value="Crear" />
-	</div>
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" />
+            <span asp-validation-for="Nombre"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Codigo"></label>
+        <div>
+            <input asp-for="Codigo" />
+            <span asp-validation-for="Codigo"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Descripcion"></label>
+        <div>
+            <input asp-for="Descripcion" />
+            <span asp-validation-for="Descripcion"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Director"></label>
+        <div>
+            <input asp-for="Director" />
+            <span asp-validation-for="Director"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Crear" />
+    </div>
 </form>
 
