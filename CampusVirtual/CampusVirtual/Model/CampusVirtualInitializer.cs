@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CampusVirtual.Model
@@ -43,29 +44,39 @@ namespace CampusVirtual.Model
                 context.SaveChanges();
             }
 
+            if (!context.Users.Any())
+            {
+                _roleManager.CreateAsync(new IdentityRole("Administrador"));//Crear Tipo de Usuario
+                Thread.Sleep(1000);
+                _roleManager.CreateAsync(new IdentityRole("Profesor"));//Crear Tipo de Usuario
+                Thread.Sleep(1000);
+                _roleManager.CreateAsync(new IdentityRole("Estudiante"));//Crear Tipo de Usuario
 
-            _roleManager.CreateAsync(new IdentityRole("Administrador"));//Crear Tipo de Usuario
-            var user1 = new Usuario() { UserName = "Admin" };//Crear usuario con Nombre
-            var result1 = _userManager.CreateAsync(user1, "Admin4!");//Asignar clave
-            _userManager.AddToRoleAsync(user1, "Administrador");//Asignar tipo de usuario
-            context.SaveChanges();
+                var user1 = new Usuario() { UserName = "Admin" };//Crear usuario con Nombre
+                var user2 = new Usuario() { UserName = "Andre" };//Crear usuario con Nombre              
+                var user3 = new Usuario() { UserName = "Alfredo" };//Crear usuario con Nombre
 
-            _roleManager.CreateAsync(new IdentityRole("Profesor"));//Crear Tipo de Usuario
-            var user2 = new Usuario() { UserName = "Andre" };//Crear usuario con Nombre
-            var result2 = _userManager.CreateAsync(user2, "Admin4!");//Asignar clave
-            _userManager.AddToRoleAsync(user2, "Profesor");//Asignar tipo de usuario 
-            context.SaveChanges();
+                var result1 = _userManager.CreateAsync(user1, "Admin4!");//Asignar clave
+                Thread.Sleep(1000);
+                var result2 = _userManager.CreateAsync(user2, "Admin4!");//Asignar clave
+                Thread.Sleep(1000);
+                var result3 = _userManager.CreateAsync(user3, "Admin4!");//Asignar clave
+                Thread.Sleep(1000);
 
-            _roleManager.CreateAsync(new IdentityRole("Estudiante"));//Crear Tipo de Usuario
-            var user3 = new Usuario() { UserName = "Alfredo" };//Crear usuario con Nombre
-            var result3 = _userManager.CreateAsync(user3, "Admin4!");//Asignar clave
-            _userManager.AddToRoleAsync(user3, "Estudiante"); //Asignar tipo de usuario 
-            context.UsuarioCurso.Add(new UsuarioCurso() { Usuario = user3, Curso = context.Cursos.SingleOrDefault(c => c.Nombre == "Psicología") });// Asignar curso a Usuario
+                _userManager.AddToRoleAsync(user1, "Administrador");//Asignar tipo de usuario
+                Thread.Sleep(1000);
+                _userManager.AddToRoleAsync(user2, "Profesor");//Asignar tipo de usuario 
+                Thread.Sleep(1000);
+                _userManager.AddToRoleAsync(user3, "Estudiante"); //Asignar tipo de usuario 
+                Thread.Sleep(1000);
 
-            context.SaveChanges();
-
-
-          //  context.SaveChanges();
+            }
+            if (!context.UsuarioCurso.Any())
+            {
+                context.UsuarioCurso.Add(new UsuarioCurso() { Usuario = context.Usuarios.SingleOrDefault(c => c.UserName == "Alfredo"), Curso = context.Cursos.SingleOrDefault(c => c.Nombre == "Psicología") });// Asignar curso a Usuario
+                   
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace CampusVirtual.ViewModels.CarrerasViewModels
 {
     public class IndexViewModel
     {
-		[Display(Name = "Lista de Grupos")]
+		[Display(Name = "Lista de Carreras")]
 		public List<Carreras> Carrera { get; set; }
 	}
 }

@@ -4,22 +4,21 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Editar Curso</h2>
+<h2 class="title">Editar Curso</h2>
 <form asp-action="Editar" asp-controller="Beca" method="post">
-	<div asp-validation-summary="All"></div>
 	<div>
 		<label asp-for="Nombre"></label>
 		<div>
-			<input asp-for="Nombre" value="@Model.Nombre" />
+			<input asp-for="Nombre" value="@Model.Nombre" class="lbl-block spaces" required/>
 			<span asp-validation-for="Nombre"></span>
 		</div>
 		<div>
-			<input asp-for="Porcentaje" value="@Model.Porcentaje" />
+			<input asp-for="Porcentaje" value="@Model.Porcentaje" class="lbl-block spaces" min="0" max="100" required/>
 			<span asp-validation-for="Porcentaje"></span>
 		</div>
 
 	</div>
 	<div>
-		<input type="submit" value="Editar" />
+		<input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit"/>
 	</div>
 </form>

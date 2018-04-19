@@ -12,96 +12,99 @@ using System.Threading.Tasks;
 namespace CampusVirtual.Controllers
 {
     public class CarrerasController : Controller
-	{
-		private readonly UserManager<Usuario> _userManager;
-		private CampusContext _context;
+    {
+        private readonly UserManager<Usuario> _userManager;
+        private CampusContext _context;
 
-		public CarrerasController(CampusContext context,
-			 UserManager<Usuario> userManager)
-		{
-			_context = context;
-			_userManager = userManager;
-		}
+        public CarrerasController(CampusContext context,
+             UserManager<Usuario> userManager)
+        {
+            _context = context;
+            _userManager = userManager;
+        }
 
-		//[Authorize]
-		public async Task<IActionResult> Index()
-		{
-		//	var CurrentUser = await _userManager.GetUserAsync(User);
-			//var Roles = await _userManager.GetRolesAsync(CurrentUser);
+        [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            var CurrentUser = await _userManager.GetUserAsync(User);
+            var Roles = await _userManager.GetRolesAsync(CurrentUser);
 
-			//if (Roles.Contains("Administrador"))
-			//{
-				return View(new IndexViewModel() { Carrera = _context.Carreras.ToList() });
-			//}
+          //  if (Roles.Contains("Administrador"))
 
-		}
-
-		//[Authorize(Roles = "Administrador")]
-		public IActionResult Crear()
-		{
-			return View();
-		}
-
-	//	[Authorize(Roles = "Administrador")]
-		[HttpPost]
-		public IActionResult Crear(CrearViewModel crearViewModel)
-		{
-			if (!ModelState.IsValid)
-			{
-				return View(crearViewModel);
-			}
-			if (!_context.Carreras.Any(c => c.Nombre == crearViewModel.Nombre))
-			{
-				_context.Carreras.Add(new Carreras() { Nombre = crearViewModel.Nombre,
-                                                        Codigo = crearViewModel.Codigo,
-                                                        Descripcion =crearViewModel.Descripcion,
-                                                        Director =crearViewModel.Director});
-				_context.SaveChanges();
-				return RedirectToAction("Index");
-			}
-
-			return View();
-		}
-
-		//[Authorize(Roles = "Administrador")]
-		public IActionResult Eliminar(int id)
-		{
-			var Curso = _context.Carreras.Find(id);
-			if (Curso != null)
-			{
-				_context.Carreras.Remove(Curso);
-				_context.SaveChanges();
-			}
-			return RedirectToAction("Index");
-		}
-
-		//[Authorize(Roles = "Administrador")]
-		public IActionResult Editar(int id)
-		{
-			return View(new EditarViewModel()
-			{
-				Carreras = _context.Carreras.Find(id)
-			});
-		}
+                return View(new IndexViewModel() { Carrera = _context.Carreras.ToList() });
 
 
-//		[Authorize(Roles = "Administrador")]
-		[HttpPost]
-		public IActionResult Editar(EditarViewModel model)
-		{
+        }
 
-			var Curso = _context.Carreras.Find(model.Id);
-			if (Curso != null)
-			{
-				Curso.Nombre = model.Nombre;
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Crear()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpPost]
+        public IActionResult Crear(CrearViewModel crearViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(crearViewModel);
+            }
+            if (!_context.Carreras.Any(c => c.Nombre == crearViewModel.Nombre))
+            {
+                _context.Carreras.Add(new Carreras()
+                {
+                    Nombre = crearViewModel.Nombre,
+                    Codigo = crearViewModel.Codigo,
+                    Descripcion = crearViewModel.Descripcion,
+                    Director = crearViewModel.Director
+                });
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+       [Authorize(Roles = "Administrador")]
+        public IActionResult Eliminar(int id)
+        {
+            var Curso = _context.Carreras.Find(id);
+            if (Curso != null)
+            {
+                _context.Carreras.Remove(Curso);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Editar(int id)
+        {
+            return View(new EditarViewModel()
+            {
+                Carreras = _context.Carreras.Find(id)
+            });
+        }
+
+
+        [Authorize(Roles = "Administrador")]
+        [HttpPost]
+        public IActionResult Editar(EditarViewModel model)
+        {
+
+            var Curso = _context.Carreras.Find(model.Id);
+            if (Curso != null)
+            {
+                Curso.Nombre = model.Nombre;
                 Curso.Codigo = model.Codigo;
-				Curso.Descripcion = model.Descripcion;
-				Curso.Director = model.Director;
-				_context.SaveChanges();
-			}
-			return RedirectToAction("Index");
-		}
+                Curso.Descripcion = model.Descripcion;
+                Curso.Director = model.Director;
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
 
 
-	}
+    }
 }

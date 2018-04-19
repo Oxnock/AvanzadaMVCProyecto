@@ -4,13 +4,12 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Crear Grupo</h2>
+<h2 class="title">Crear Grupo</h2>
 <form asp-action="Crear" asp-controller="Grupos" method="post">
-	<div asp-validation-summary="All"></div>
 	<div>
 		<label asp-for="NumeroGrupo"></label>
 		<div>
-			<input asp-for="NumeroGrupo" />
+			<input asp-for="NumeroGrupo" class="lbl-block spaces" required min="1"/>
 			<span asp-validation-for="NumeroGrupo"></span>
 		</div>
 	</div>
@@ -53,6 +52,6 @@
 
 
 	<div>
-		<input type="submit" value="Crear" />
+		<input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit"/>
 	</div>
 </form>

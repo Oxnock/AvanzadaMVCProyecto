@@ -4,17 +4,16 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Editar Curso</h2>
+<h2 class="title">Editar Curso</h2>
 <form asp-action="Editar" asp-controller="Grupos" method="post">
-	<div asp-validation-summary="All"></div>
 	<div>
 		<label asp-for="NumeroGrupo"></label>
 		<div>
-			<input asp-for="NumeroGrupo" value="@Model.Grupo.NumeroGrupo" />
+			<input asp-for="NumeroGrupo" value="@Model.Grupo.NumeroGrupo" class="lbl-block spaces" required min="1"/>
 			<span asp-validation-for="NumeroGrupo"></span>
 		</div>
 		<div>
-		<input asp-for="Horario" value="@Model.Grupo.Horario" />
+		<input asp-for="Horario" value="@Model.Grupo.Horario" class="lbl-block" required/>
 		<table>
 			<tbody>
 				<tr>
@@ -53,6 +52,6 @@
 			</div>
 	</div>
 	<div>
-		<input type="submit" value="Editar" />
+		<input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit"/>
 	</div>
 </form>

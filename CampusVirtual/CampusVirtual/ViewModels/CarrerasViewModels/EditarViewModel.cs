@@ -9,15 +9,17 @@ namespace CampusVirtual.ViewModels.CarrerasViewModels
 {
     public class EditarViewModel
     {
-		public string Nombre { get; set; }
+        [Required(ErrorMessage = "El nombre de carrera es requerido")]
+        public string Nombre { get; set; }
 		[Required]
 		public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El codigo de carrera es requerido")]
         public string Codigo { get; set; } //add
-        [Required]
-		public string Descripcion { get; set; }
-		[Required]
-		public string Director { get; set; }
+        [Required(ErrorMessage = "La descripción es requerida")]
+        [Display(Name = "Descripción")]
+        public string Descripcion { get; set; }
+        [Required(ErrorMessage = "El nombre de director es requerido")]
+        public string Director { get; set; }
 		public Carreras Carreras { get; set; }
 	}
 }

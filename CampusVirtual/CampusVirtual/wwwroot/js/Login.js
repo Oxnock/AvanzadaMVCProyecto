@@ -1,12 +1,10 @@
-﻿//Password validation
-jQuery(function () {
-    $('.password').keyup(function (event) {
+﻿//Password vlaidation 
+$(function () {
+    $('.form-login').submit(function (event) {
         var input2 = $(this).children('.usuario').val();
-        console.log(input2);
         $.trim(".usuario.html()");
         var input = $(this).children('.password').val();
-        console.log(input);
-        var password = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.^*()%!-])(?!.*\s).{8,}$/);
+        var password = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.^*()%!-])(?!.*\s).{6,}$/);
         if (!password.test(input)) {
             $(".alerthidden").removeClass('fade');
             $(".alerthidden").addClass('show');

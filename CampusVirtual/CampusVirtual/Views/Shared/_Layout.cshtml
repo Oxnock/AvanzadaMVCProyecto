@@ -27,6 +27,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="~/css/site.css" />
 
+
 </head>
 <body>
     <nav id="myNavbar" class=" background-gradient navbar-default navbar-inverse navbar-fixed-top" role="navigation">
@@ -39,13 +40,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area=""  class="navbar-brand">Universidad</a>
+                <a asp-area="" class="navbar-brand">Universidad</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a></li>
-                    <li><a asp-area="" asp-controller="Carreras" asp-action="Index">Carreras</a></li>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <li><a asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a></li>
+                        <li><a asp-area="" asp-controller="Carreras" asp-action="Index">Carreras</a></li>
+                        <li><a asp-area="" asp-controller="Grupos" asp-action="Index">Grupos</a></li>
+                        <li><a asp-area="" asp-controller="Beca" asp-action="Crear">Becas</a></li>
+                    }
+                    else if (User.IsInRole("Profesor"))
+                    {
+                        <li><a asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a></li>
+                        <li><a asp-area="" asp-controller="Carreras" asp-action="Index">Carreras</a></li>
+                        <li><a asp-area="" asp-controller="Grupos" asp-action="Index">Grupos</a></li>
+                        <li><a asp-area="" asp-controller="Beca" asp-action="Crear">Becas</a></li>
 
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a></li>
+                        <li><a asp-area="" asp-controller="Carreras" asp-action="Index">Carreras</a></li>
+
+                    }
                 </ul>
 
                 <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">

@@ -1,86 +1,108 @@
 ﻿@model CampusVirtual.ViewModels.CarrerasViewModels.IndexViewModel
 @{
-	ViewBag.Title = "Index";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @inject SignInManager<Usuario> SignInManager
 
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
-@*@if (User.IsInRole("Administrador"))
-{*@
-	<h2 class="title">Administrar Cursos</h2>
-	<a asp-action="Crear" asp-controller="Curso"  class="btn btn-primary btn-md btn-submit">Crear carrera</a>
+
+@if (User.IsInRole("Administrador"))
+    {
+<h2 class="title">Administrar Carreras</h2>
+<a asp-action="Crear" asp-controller="Carreras" class="btn btn-primary btn-md btn-submit">Crear carrera</a>
 }
 
-@*@if (User.IsInRole("Profesor"))
-{*@
-	<h2 class="title">Carreras</h2>
+@if (User.IsInRole("Profesor"))
+    {
+<h2 class="title">Carreras</h2>
 
-	<table>
-		<thead>
-			<tr>
-				<th>Curso</th>
-				@*@if (User.IsInRole("Administrador"))
-				{*@
-					<th>Opciones</th>
-				@*}*@
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var curso in Model.Carrera)
-			{
-			<tr>
-				<td>
-					@curso.Nombre
-				</td>
-				<td>
-					@curso.Descripcion
-				</td>
-				<td>
-					@curso.Director
-				</td>
-				@*@if (User.IsInRole("Administrador"))
-	{*@
-			<td>
-				<a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.CarrerasId">Editar</a>
-				<a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.CarrerasId">Eliminar</a>
-			</td>
-@*}*@
-			</tr>
-			}
-		</tbody>
-	</table>
-@*}*@
+<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+    <thead>
+        <tr>
+            <th>Carrera</th>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Director</th>
 
-@*@if (User.IsInRole("Estudiante"))
-{
-	<h2 class="title">Carreras</h2>
-
-	<table>
-		<thead>
-			<tr>
-				<th>Curso</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var curso in Model.Carrera)
-			{
-			<tr>
-				<td>
-					@curso.Nombre
-				</td>
-				<td>
-					@curso.Descripcion
-				</td>
-				<td>
-					@curso.Director
-				</td>
-
-			</tr>
-			}
-		</tbody>
-	</table>*@
+            @if (User.IsInRole("Administrador"))
+                {
+            <th>Opciones</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var carrera in Model.Carrera)
+        {
+            <tr>
+                <td>
+                    @carrera.Nombre
+                </td>
+                <td>
+                    @carrera.Codigo
+                </td>
+                <td>
+                    @carrera.Descripcion
+                </td>
+                <td>
+                    @carrera.Director
+                </td>
+                @if (User.IsInRole("Administrador"))
+                    {
+                <td>
+                    <a class="btn btn-warning btn-md" asp-action="Editar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-md del" asp-action="Eliminar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
+                </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
 }
 
 
+@*<h2 class="title">Carreras</h2>*@
+
+<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+    <thead>
+        <tr>
+            <th>Carrera</th>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Director</th>
+            @if (User.IsInRole("Administrador"))
+                {
+            <th>Opciones</th>
+            }
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var carrera in Model.Carrera)
+        {
+            <tr>
+                <td>
+                    @carrera.Nombre
+                </td>
+                <td>
+                    @carrera.Codigo
+                </td>
+                <td>
+                    @carrera.Descripcion
+                </td>
+                <td>
+                    @carrera.Director
+                </td>
+                @if (User.IsInRole("Administrador"))
+                    {
+                <td>
+                    <a class="btn btn-warning btn-md" asp-action="Editar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-md del" asp-action="Eliminar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
+                </td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>

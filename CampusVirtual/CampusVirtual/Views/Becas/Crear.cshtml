@@ -4,24 +4,25 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @inject SignInManager<Usuario> SignInManager
-<h2>Crear Curso</h2>
+<h2 class="title">Crear Curso</h2>
 <form asp-action="Crear" asp-controller="Beca" method="post">
 	<div>
 		<label asp-for="Nombre"></label>
 		<div>
-			<input asp-for="Nombre" />
+			<input asp-for="Nombre" class="lbl-block spaces" required/>
 			<span asp-validation-for="Nombre"></span>
 		</div>
 	</div>
 	<div>
 		<label asp-for="Porcentaje"></label>
 		<div>
-			<input asp-for="Porcentaje" />
+			<input  asp-for="Porcentaje" class="lbl-block spaces" min="0" max="100" required />
 			<span asp-validation-for="Porcentaje"></span>
 		</div>
 	</div>
 
 	<div>
-		<input type="submit" value="Crear" />
+		<input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit"
+/>
 	</div>
 </form>

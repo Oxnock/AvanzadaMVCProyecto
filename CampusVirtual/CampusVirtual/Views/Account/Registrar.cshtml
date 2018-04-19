@@ -10,7 +10,7 @@
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" class="lbl-block"/>
+            <input asp-for="Nombre" class="lbl-block spaces" required/>
             <div>
             <span asp-validation-for="Nombre"></span>
             </div>
@@ -19,7 +19,7 @@
     <div>
         <label asp-for="Clave"></label>
         <div>
-            <input asp-for="Clave" class="lbl-block" />
+            <input asp-for="Clave" class="lbl-block spaces" required/>
             <div>
                 <span asp-validation-for="Clave"></span>
                 </div>
@@ -28,7 +28,7 @@
     <div>
         <label asp-for="TipoUsuarios"></label>
         <div>
-            <select asp-for="TipoUsuario" class="lbl-block">
+            <select asp-for="TipoUsuario" class="lbl-block" required>
                 <option>Estudiante</option>
                 <option>Profesor</option>
                 <option>Registro</option>

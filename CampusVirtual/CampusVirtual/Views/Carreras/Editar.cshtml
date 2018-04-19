@@ -1,33 +1,51 @@
 ﻿@model CampusVirtual.ViewModels.CarrerasViewModels.EditarViewModel
 @{
-	ViewBag.Title = "Editar";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="title">Editar Curso</h2>
+<h2 class="title">Editar Carrera</h2>
 <form asp-action="Editar" asp-controller="Carreras" method="post">
-	<div asp-validation-summary="All"></div>
+
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" value="@Model.Nombre" />
-            <span asp-validation-for="Nombre"></span>
+            <input asp-for="Nombre" value="@Model.Nombre" class="lbl-block spaces" required/>
+            <div>
+                <span asp-validation-for="Nombre"></span>
+            </div>
         </div>
-        <div>
-            <input asp-for="Codigo" value="@Model.Codigo" />
-            <span asp-validation-for="Codigo"></span>
-        </div>
-        <div>
-            <input asp-for="Descripcion" value="@Model.Descripcion" />
-            <span asp-validation-for="Descripcion"></span>
-        </div>
-        <div>
-            <input asp-for="Director" value="@Model.Director" />
-            <span asp-validation-for="Director"></span>
-        </div>
-
     </div>
-	<div>
-		<input type="submit" value="Editar" />
-	</div>
+
+    <div>
+        <label asp-for="Codigo"></label>
+        <div>
+            <input asp-for="Codigo" value="@Model.Codigo" class="lbl-block spaces" required/>
+            <div>
+                <span asp-validation-for="Codigo"></span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label asp-for="Descripcion"></label>
+        <div>
+            <textarea rows="4" cols="50" asp-for="Descripcion" value="@Model.Descripcion" class="lbl-block spaces" required/></textarea>
+        </div>
+        <span asp-validation-for="Descripcion"></span>
+    </div>
+
+    <div>
+        <label asp-for="Director"></label>
+        <div>
+            <input asp-for="Director" value="@Model.Director" class="lbl-block spaces" required/>
+            <div>
+                <span asp-validation-for="Director"></span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
+    </div>
 </form>

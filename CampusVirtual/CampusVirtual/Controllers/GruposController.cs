@@ -31,16 +31,11 @@ namespace CampusVirtual.Controllers
 				var CurrentUser = await _userManager.GetUserAsync(User);
 				var Roles = await _userManager.GetRolesAsync(CurrentUser);
 
-				if (Roles.Contains("Administrador"))
-				{
-					return View(new IndexViewModel() { Grupo = _context.Grupos.ToList() });
-				}
-
-			return View(new IndexViewModel()
-			{
-				Grupo = _context.Grupos.ToList()
-				});
-			}
+            //if (Roles.Contains("Administrador"))
+            //{
+                return View(new IndexViewModel() { Grupo = _context.Grupos.ToList() });
+           
+        }
 
 			[Authorize(Roles = "Administrador")]
 			public IActionResult Crear()
@@ -48,7 +43,7 @@ namespace CampusVirtual.Controllers
 				return View();
 			}
 
-			[Authorize(Roles = "Administrador")]
+		[Authorize(Roles = "Administrador")]
 			[HttpPost]
 			public IActionResult Crear(CrearViewModel crearViewModel)
 			{
@@ -66,20 +61,20 @@ namespace CampusVirtual.Controllers
 				return View();
 			}
 
-			[Authorize(Roles = "Administrador")]
-			public IActionResult Eliminar(int id)
-			{
-				var Curso = _context.Grupos.Find(id);
-				if (Curso != null)
-				{
-					_context.Grupos.Remove(Curso);
-					_context.SaveChanges();
-				}
-				return RedirectToAction("Index");
-			}
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Eliminar(int id)
+        {
+            var Curso = _context.Grupos.Find(id);
+            if (Curso != null)
+            {
+                _context.Grupos.Remove(Curso);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
 
-			[Authorize(Roles = "Administrador")]
-			public IActionResult Editar(int id)
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Editar(int id)
 			{
 				return View(new EditarViewModel()
 				{

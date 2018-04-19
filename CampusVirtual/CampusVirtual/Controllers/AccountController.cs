@@ -92,7 +92,7 @@ namespace CampusVirtual.Controllers
 
         public async Task<IActionResult> Salir() {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Ingresar");
+            return RedirectToAction("Ingresar", "Account");
         }
 
         public IActionResult AccessDenied() {

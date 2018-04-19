@@ -5,19 +5,18 @@
 }
 @inject SignInManager<Usuario> SignInManager
 
-<h2>Index</h2>
 
 @if (User.IsInRole("Administrador"))
 {
-	<h2>Administrar Becas</h2>
-	<a asp-action="Crear" asp-controller="Beca">Crear</a>
+	<h2 class="title">Administrar Becas</h2>
+	<a asp-action="Crear" asp-controller="Beca" class="btn btn-primary btn-md btn-submit">Crear</a>
 }
 
 @if (User.IsInRole("Profesor"))
 {
-	<h2>Carreras</h2>
+	<h2 class="title">Carreras</h2>
 
-	<table>
+	<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
 		<thead>
 			<tr>
 				<th>Curso</th>
@@ -57,7 +56,7 @@
 {
 	<h2>Carreras</h2>
 
-	<table>
+	<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
 		<thead>
 			<tr>
 				<th>Curso</th>
