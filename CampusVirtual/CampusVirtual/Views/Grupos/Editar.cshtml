@@ -9,7 +9,7 @@
 
 	<div class="form-group">
 		<label asp-for="CursoId" class="control-label"></label>
-		<input asp-for="CursoId" value="@Model.Grupo.CursoId"class="lbl-block spaces" required />
+		<input asp-for="CursoId" value="@Model.Grupo.CursoId" class="lbl-block spaces" required />
 		<span asp-validation-for="CursoId" class="text-danger"></span>
 	</div>
 
@@ -22,43 +22,35 @@
 		</div>
 		<div>
 			<input asp-for="Horario" value="@Model.Grupo.Horario" class="lbl-block" required />
-			<table>
-				<tbody>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='LM'>Lunes-Mañana  </td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='LT'>Lunes-Tarde  </td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='LN'>Lunes-Noche  </td>
-					</tr>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='KM'>Martes-Mañana</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='KT'>Martes-Tarde</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='KN'>Martes-Noche </td>
-					</tr>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='MM'>Miércoles-Mañana</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='MT'>Miércoles-Tarde</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='MN'>Miércoles-Noche</td>
-					</tr>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='JM'>Jueves-Mañana</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='JT'>Jueves-Tarde</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='JN'>Jueves-Noche  </td>
-					</tr>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='VM'>Viernes-Mañana</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='VT'>Viernes-Tarde</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='VN'>Viernes-Noche </td>
-					</tr>
-					<tr>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='SM'>Sábado-Mañana</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='ST'>Sábado-Tarde</td>
-						<td><input type="radio" asp-for="Horario" name="idhorario" value='SN'>Sábado-Noche </td>
-					<tr>
-				<tbody>
-			</table>
+			<select asp-for="Horario" class="form-control">
+				<option name="idhorario" value='LM'>Lunes-Mañana </option>
+				<option name="idhorario" value='LT'>Lunes-Tarde  </option>
+				<option name="idhorario" value='LN'>Lunes-Noche  </option>
+
+				<option name="idhorario" value='KM'>Martes-Mañana  </option>
+				<option name="idhorario" value='KT'>Martes-Tarde  </option>
+				<option name="idhorario" value='KN'>Martes-Noche  </option>
+
+				<option name="idhorario" value='MM'>Miercoles-Mañana  </option>
+				<option name="idhorario" value='MT'>Miercoles-Tarde  </option>
+				<option name="idhorario" value='MN'>Miercoles-Noche  </option>
+
+				<option name="idhorario" value='JM'>Jueves-Mañana  </option>
+				<option name="idhorario" value='JT'>Jueves-Tarde  </option>
+				<option name="idhorario" value='JN'>Jueves-Noche  </option>
+
+				<option name="idhorario" value='VM'>Viernes-Mañana  </option>
+				<option name="idhorario" value='VT'>Viernes-Tarde  </option>
+				<option name="idhorario" value='VN'>Viernes-Noche</option>
+
+				<option name="idhorario" value='SM'>Sabado-Mañana  </option>
+				<option name="idhorario" value='ST'>Sabado-Tarde  </option>
+				<option name="idhorario" value='SN'>Sabado-Noche  </option>
+			</select>
 
 		</div>
 	</div>
+	<input asp-for="Id" value="@Model.Grupo.GruposId" hidden />
 	<div>
 		<input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
 	</div>
