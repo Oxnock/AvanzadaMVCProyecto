@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CampusVirtual.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace CampusVirtual.ViewModels.GrupoViewModels
 		[Required]
 		[Display(Name = "Horario")]
 		public string Horario { get; set; }
+		public string CursoId { get; set; }
+		public virtual Curso CursosC { get; set; }
 	}
 }

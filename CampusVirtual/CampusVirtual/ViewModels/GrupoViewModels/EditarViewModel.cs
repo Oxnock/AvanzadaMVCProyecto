@@ -16,6 +16,7 @@ namespace CampusVirtual.ViewModels.GrupoViewModels
 		[Required]
 		[Display(Name = "Horario")]
 		public string Horario { get; set; }
-
+		public string CursoId { get; set; }
+		public virtual Curso CursosC { get; set; }
 	}
 }

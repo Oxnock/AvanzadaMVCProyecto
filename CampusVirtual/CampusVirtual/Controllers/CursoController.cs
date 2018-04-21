@@ -59,7 +59,7 @@ namespace CampusVirtual.Controllers
             }
             if (!_context.Cursos.Any(c => c.Nombre == crearViewModel.Nombre))
             {
-                _context.Cursos.Add(new Curso() { Nombre = crearViewModel.Nombre, Codigo = crearViewModel.Codigo });
+                _context.Cursos.Add(new Curso() { Nombre = crearViewModel.Nombre, Codigo = crearViewModel.Codigo, CarreraId=crearViewModel.CarreraId, CarrerasC=crearViewModel.CarrerasC });
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -99,6 +99,8 @@ namespace CampusVirtual.Controllers
             {
                 Curso.Nombre = model.Nombre;
                 Curso.Codigo = model.Codigo;
+				Curso.CarrerasC = model.CarrerasC;
+				Curso.CarreraId = model.CarreraId;
                 _context.SaveChanges();
             }
             return RedirectToAction("Index");

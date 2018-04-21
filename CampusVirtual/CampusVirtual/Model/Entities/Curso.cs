@@ -17,5 +17,7 @@ namespace CampusVirtual.Model.Entities
         public string Codigo { get; set; } //add
         public virtual ICollection<UsuarioCurso> UsuarioCursos { get; set; }
         public virtual ICollection<Evaluacion> Evaluaciones { get; set; }
-    }
+		public string CarreraId { get; set; }
+		public virtual Carreras CarrerasC { get; set; }
+	}
 }
