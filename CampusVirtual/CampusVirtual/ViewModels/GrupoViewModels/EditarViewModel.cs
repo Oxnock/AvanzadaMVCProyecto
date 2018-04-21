@@ -9,6 +9,8 @@ namespace CampusVirtual.ViewModels.GrupoViewModels
 {
     public class EditarViewModel
     {
+		[Required]
+		public int Id { get; set; }
 		public Grupos Grupo { get; set; }
 		[Required]
 		[Display(Name = "Numero de grupo")]

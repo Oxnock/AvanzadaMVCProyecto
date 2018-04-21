@@ -53,7 +53,7 @@ namespace CampusVirtual.Controllers
 				}
 				if (!_context.Grupos.Any(c => c.NumeroGrupo == crearViewModel.NumeroGrupo))
 				{
-					_context.Grupos.Add(new Grupos() {NumeroGrupo  = crearViewModel.NumeroGrupo,Horario =crearViewModel.Horario,CursoId=crearViewModel.CursoId,CursosC=crearViewModel.CursosC });
+					_context.Grupos.Add(new Grupos() {NumeroGrupo  = crearViewModel.NumeroGrupo,Horario =crearViewModel.Horario,CursoId=crearViewModel.CursoId,Materia=crearViewModel.CursosC });
 					_context.SaveChanges();
 					return RedirectToAction("Index");
 				}
@@ -88,13 +88,13 @@ namespace CampusVirtual.Controllers
 			public IActionResult Editar(EditarViewModel model)
 			{
 
-				var Curso = _context.Grupos.Find(model.Grupo.GruposId);
+				var Curso = _context.Grupos.Find(model.Id);
 				if (Curso != null)
 				{
 					Curso.NumeroGrupo = model.NumeroGrupo;
 				Curso.Horario = model.Horario;
 				Curso.CursoId = model.CursoId;
-				Curso.CursosC = model.CursosC;
+				Curso.Materia = model.CursosC;
 				_context.SaveChanges();
 				}
 				return RedirectToAction("Index");
