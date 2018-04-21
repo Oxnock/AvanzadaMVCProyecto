@@ -6,29 +6,36 @@
 
 <h2 class="title">Editar Curso</h2>
 <form asp-action="Editar" asp-controller="Curso" method="post">
-    
-    <div>
-        <label asp-for="Nombre"></label>
-        <div>
-            <input asp-for="Nombre" value="@Model.Curso.Nombre" class="lbl-block spaces" required/>
-            <div>
-                <span asp-validation-for="Nombre"></span>
-                </div>
-                </div>
-            </div>
-    <div>
-        <label asp-for="Codigo"></label>
-        <div>
-            <input asp-for="Codigo" value="@Model.Curso.Codigo" class="lbl-block spaces" required/>
-            <div>
-                <span asp-validation-for="Codigo"></span>
-                </div>
-                </div>
-                <input asp-for="Id" value="@Model.Curso.CursoId" hidden />
-            </div>
-    <div>
-        <input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
-    </div>
+
+	<div>
+		<label asp-for="Nombre"></label>
+		<div>
+			<input asp-for="Nombre" value="@Model.Curso.Nombre" class="lbl-block spaces" required />
+			<div>
+				<span asp-validation-for="Nombre"></span>
+			</div>
+		</div>
+	</div>
+	<div>
+		<label asp-for="Codigo"></label>
+		<div>
+			<input asp-for="Codigo" value="@Model.Curso.Codigo" class="lbl-block spaces" required />
+			<div>
+				<span asp-validation-for="Codigo"></span>
+			</div>
+		</div>
+		<input asp-for="Id" value="@Model.Curso.CursoId" hidden />
+	</div>
+	<div class="form-group">
+		<label asp-for="CarreraId" class="control-label"></label>
+		<input asp-for="CarreraId" value="@Model.Curso.CarreraId" class="lbl-block spaces" required  />
+		<span asp-validation-for="CarreraId" class="text-danger"></span>
+	</div>
+
+
+	<div>
+		<input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
+	</div>
 </form>
 
 

@@ -12,6 +12,6 @@ namespace CampusVirtual.Model.Entities
 	public int NumeroGrupo { get; set; }
 	public string Horario { get; set; }
 		public string CursoId { get; set; }
-		public virtual Curso CursosC { get; set; }
+	
 	}
 }
