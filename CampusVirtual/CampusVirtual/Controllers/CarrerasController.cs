@@ -57,7 +57,7 @@ namespace CampusVirtual.Controllers
                     Nombre = crearViewModel.Nombre,
                     Codigo = crearViewModel.Codigo,
                     Descripcion = crearViewModel.Descripcion,
-                    Director = crearViewModel.Director
+                
                 });
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,7 +99,7 @@ namespace CampusVirtual.Controllers
                 Curso.Nombre = model.Nombre;
                 Curso.Codigo = model.Codigo;
                 Curso.Descripcion = model.Descripcion;
-                Curso.Director = model.Director;
+             
                 _context.SaveChanges();
             }
             return RedirectToAction("Index");
