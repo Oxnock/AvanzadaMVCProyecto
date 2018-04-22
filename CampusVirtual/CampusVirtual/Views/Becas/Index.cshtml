@@ -1,0 +1,86 @@
+﻿@model CampusVirtual.ViewModels.BecaViewModels.IndexViewModel
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+
+@if (User.IsInRole("Administrador"))
+{
+	<h2 class="title">Administrar Becas</h2>
+	<a asp-action="Crear" asp-controller="Beca" class="btn btn-primary btn-md btn-submit">Crear</a>
+}
+
+@if (User.IsInRole("Profesor"))
+{
+	<h2 class="title">Carreras</h2>
+
+	<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+		<thead>
+			<tr>
+				<th>Curso</th>
+				@if (User.IsInRole("Administrador"))
+				{
+					<th>Opciones</th>
+				}
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var curso in Model.Becas)
+			{
+				<tr>
+					<td>
+						@curso.BecaId
+					</td>
+					<td>
+						@curso.Nombre
+					</td>
+					<td>
+						@curso.Porcentaje
+					</td>
+					@if (User.IsInRole("Administrador"))
+					{
+						<td>
+							<a asp-action="Editar" asp-controller="Beca" asp-route-id="@curso.BecaId">Editar</a>
+							<a asp-action="Eliminar" asp-controller="Beca" asp-route-id="@curso.BecaId">Eliminar</a>
+						</td>
+					}
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@if (User.IsInRole("Estudiante"))
+{
+	<h2>Carreras</h2>
+
+	<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+		<thead>
+			<tr>
+				<th>Curso</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var curso in Model.Becas)
+			{
+			<tr>
+				<td>
+					@curso.BecaId
+				</td>
+				<td>
+					@curso.Nombre
+				</td>
+				<td>
+					@curso.Porcentaje
+				</td>
+
+			</tr>
+			}
+		</tbody>
+	</table>
+}
+
+

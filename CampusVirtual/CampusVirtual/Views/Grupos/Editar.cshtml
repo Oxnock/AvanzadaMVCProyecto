@@ -1,0 +1,57 @@
+﻿@model CampusVirtual.ViewModels.GrupoViewModels.EditarViewModel
+@{
+	ViewBag.Title = "Editar ";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="title">Editar Curso</h2>
+<form asp-action="Editar" asp-controller="Grupos" method="post">
+
+	<div class="form-group">
+		<label asp-for="CursoId" class="control-label"></label>
+		<input asp-for="CursoId" value="@Model.Grupo.CursoId" class="lbl-block spaces" required />
+		<span asp-validation-for="CursoId" class="text-danger"></span>
+	</div>
+
+
+	<div>
+		<label asp-for="NumeroGrupo"></label>
+		<div>
+			<input asp-for="NumeroGrupo" value="@Model.Grupo.NumeroGrupo" class="lbl-block spaces" required min="1" />
+			<span asp-validation-for="NumeroGrupo"></span>
+		</div>
+		<div>
+			<input asp-for="Horario" value="@Model.Grupo.Horario" class="lbl-block" required />
+			<select asp-for="Horario" class="form-control">
+				<option name="idhorario" value='LM'>Lunes-Mañana </option>
+				<option name="idhorario" value='LT'>Lunes-Tarde  </option>
+				<option name="idhorario" value='LN'>Lunes-Noche  </option>
+
+				<option name="idhorario" value='KM'>Martes-Mañana  </option>
+				<option name="idhorario" value='KT'>Martes-Tarde  </option>
+				<option name="idhorario" value='KN'>Martes-Noche  </option>
+
+				<option name="idhorario" value='MM'>Miercoles-Mañana  </option>
+				<option name="idhorario" value='MT'>Miercoles-Tarde  </option>
+				<option name="idhorario" value='MN'>Miercoles-Noche  </option>
+
+				<option name="idhorario" value='JM'>Jueves-Mañana  </option>
+				<option name="idhorario" value='JT'>Jueves-Tarde  </option>
+				<option name="idhorario" value='JN'>Jueves-Noche  </option>
+
+				<option name="idhorario" value='VM'>Viernes-Mañana  </option>
+				<option name="idhorario" value='VT'>Viernes-Tarde  </option>
+				<option name="idhorario" value='VN'>Viernes-Noche</option>
+
+				<option name="idhorario" value='SM'>Sabado-Mañana  </option>
+				<option name="idhorario" value='ST'>Sabado-Tarde  </option>
+				<option name="idhorario" value='SN'>Sabado-Noche  </option>
+			</select>
+
+		</div>
+	</div>
+	<input asp-for="Id" value="@Model.Grupo.GruposId" hidden />
+	<div>
+		<input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
+	</div>
+</form>

@@ -17,7 +17,7 @@ namespace CampusVirtual.Controllers
 		private CampusContext _context;
 		public IActionResult Index()
         {
-		//	return View(new IndexViewModel() { Lista = _context.Asistencias.ToList() });
+			//return View(new IndexViewModel() { Lista = _context.Asistencias.ToList() });
 			return View();
         }
 
