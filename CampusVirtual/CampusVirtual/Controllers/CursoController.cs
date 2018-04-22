@@ -37,12 +37,12 @@ namespace CampusVirtual.Controllers
                     Cursos = _context.Cursos.ToList()
                 });
             }
-
+            var CursosMatriculados = _context.UsuarioCurso
+                        .Where(uc => uc.Usuario == CurrentUser)
+                        .Select(uc => uc.Curso).ToList();
             return View(new IndexViewModel()
             {
-                Cursos = _context.UsuarioCurso
-                        .Where(uc => uc.Usuario == CurrentUser)
-                        .Select(uc => uc.Curso).ToList()
+                Cursos = CursosMatriculados
             });
         }
 

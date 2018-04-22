@@ -11,8 +11,8 @@ using System;
 namespace CampusVirtual.Migrations
 {
     [DbContext(typeof(CampusContext))]
-    [Migration("20180422170646_DbMigration")]
-    partial class DbMigration
+    [Migration("20180422193027_carreras")]
+    partial class carreras
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

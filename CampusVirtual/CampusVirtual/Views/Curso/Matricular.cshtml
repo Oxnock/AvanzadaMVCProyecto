@@ -3,14 +3,15 @@
     ViewBag.Title = "Matricula";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
 <h2>Matricula</h2>
 
 <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
     <thead>
         <tr>
-            <th>Curso</th>
-            <th>Opciones</th>
+            <th class="col-md-11">Curso</th>
+            <th class="col-md-1">Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
             <tr>
                 <td>
                     @curso.Nombre
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-md pull-right" asp-action="Matricular" asp-controller="Curso" asp-route-id="@curso.CursoId"> <i class="FontAwesome fas fa-plus"></i></a>
                 </td>
             </tr>
         }

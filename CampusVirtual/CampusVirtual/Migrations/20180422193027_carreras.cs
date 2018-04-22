@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CampusVirtual.Migrations
 {
-    public partial class initialdb : Migration
+    public partial class carreras : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,16 +49,17 @@ namespace CampusVirtual.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cursos",
+                name: "Becas",
                 columns: table => new
                 {
-                    CursoId = table.Column<int>(nullable: false)
+                    BecaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(nullable: true)
+                    Nombre = table.Column<string>(nullable: true),
+                    Porcentaje = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cursos", x => x.CursoId);
+                    table.PrimaryKey("PK_Becas", x => x.BecaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -168,6 +169,51 @@ namespace CampusVirtual.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Carreras",
+                columns: table => new
+                {
+                    CarrerasId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Codigo = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: true),
+                    Director = table.Column<string>(nullable: true),
+                    Director1Id = table.Column<string>(nullable: true),
+                    Nombre = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carreras", x => x.CarrerasId);
+                    table.ForeignKey(
+                        name: "FK_Carreras_AspNetUsers_Director1Id",
+                        column: x => x.Director1Id,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cursos",
+                columns: table => new
+                {
+                    CursoId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CarreraId = table.Column<string>(nullable: true),
+                    CarrerasCCarrerasId = table.Column<int>(nullable: true),
+                    Codigo = table.Column<string>(nullable: true),
+                    Nombre = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cursos", x => x.CursoId);
+                    table.ForeignKey(
+                        name: "FK_Cursos_Carreras_CarrerasCCarrerasId",
+                        column: x => x.CarrerasCCarrerasId,
+                        principalTable: "Carreras",
+                        principalColumn: "CarrerasId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Asistencias",
                 columns: table => new
                 {
@@ -216,6 +262,28 @@ namespace CampusVirtual.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Grupos",
+                columns: table => new
+                {
+                    GruposId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CursoId = table.Column<string>(nullable: true),
+                    Horario = table.Column<string>(nullable: true),
+                    MateriaCursoId = table.Column<int>(nullable: true),
+                    NumeroGrupo = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Grupos", x => x.GruposId);
+                    table.ForeignKey(
+                        name: "FK_Grupos_Cursos_MateriaCursoId",
+                        column: x => x.MateriaCursoId,
+                        principalTable: "Cursos",
+                        principalColumn: "CursoId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UsuarioCurso",
                 columns: table => new
                 {
@@ -232,7 +300,7 @@ namespace CampusVirtual.Migrations
                         column: x => x.CursoId,
                         principalTable: "Cursos",
                         principalColumn: "CursoId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UsuarioCurso_AspNetUsers_UsuarioId",
                         column: x => x.UsuarioId,
@@ -317,9 +385,24 @@ namespace CampusVirtual.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Carreras_Director1Id",
+                table: "Carreras",
+                column: "Director1Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cursos_CarrerasCCarrerasId",
+                table: "Cursos",
+                column: "CarrerasCCarrerasId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Evaluaciones_CursoId",
                 table: "Evaluaciones",
                 column: "CursoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Grupos_MateriaCursoId",
+                table: "Grupos",
+                column: "MateriaCursoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Notas_EvaluacionId",
@@ -363,6 +446,12 @@ namespace CampusVirtual.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Becas");
+
+            migrationBuilder.DropTable(
+                name: "Grupos");
+
+            migrationBuilder.DropTable(
                 name: "Notas");
 
             migrationBuilder.DropTable(
@@ -375,10 +464,13 @@ namespace CampusVirtual.Migrations
                 name: "Evaluaciones");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Cursos");
 
             migrationBuilder.DropTable(
-                name: "Cursos");
+                name: "Carreras");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }
