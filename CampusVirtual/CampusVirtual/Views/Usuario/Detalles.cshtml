@@ -1,0 +1,55 @@
+﻿@model CampusVirtual.ViewModels.UsuarioViewModels.DetallesViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+
+@if (User.IsInRole("Administrador"))
+{
+    <h2 class="title">Detalles de @Model.Usuario.UserName</h2>
+
+    <h3>Cursos</h3>
+    <ul>
+        @foreach (var Curso in Model.Cursos)
+        {
+            <li>
+                @Curso.Nombre
+            </li>
+        }
+    </ul>
+
+    <h3 class="title">Notas</h3>
+
+        <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+
+            <thead>
+                <tr>
+                    <th class="col-lg-8">Evaluacion</th>
+                    <th class="col-lg-2">Nota</th>
+                    <th class="col-lg-2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Nota in Model.Usuario.Notas)
+                {
+                    <tr>
+                        <td>
+                            @Nota.Evaluacion.Nombre
+                        </td>
+                        <td></td>
+                        <td>
+                            <a asp-controller="Usuario" asp-action="Detalles" class="btn btn-primary btn-md"> <i class="FontAwesome fa fa-list-ul"></i></a>
+                            <a asp-controller="Usuario" asp-action="Editar" class="btn btn-warning btn-md"> <i class="FontAwesome fas fa-edit"></i></a>
+                            <a asp-controller="Usuario" asp-action="Eliminar" class="btn btn-danger btn-md del"> <i class="FontAwesome fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+}
+

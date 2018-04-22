@@ -111,7 +111,7 @@ namespace CampusVirtual.Controllers
         {
             return View(new MatricularViewModel()
             {
-                Cursos = _context.Cursos
+                Cursos = _context.Cursos.ToList()
             });
         }
     }

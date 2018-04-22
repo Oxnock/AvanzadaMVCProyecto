@@ -83,11 +83,17 @@ namespace CampusVirtual.Migrations
                     b.Property<int>("CursoId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CarreraId");
+
+                    b.Property<int?>("CarrerasCCarrerasId");
+
                     b.Property<string>("Codigo");
 
                     b.Property<string>("Nombre");
 
                     b.HasKey("CursoId");
+
+                    b.HasIndex("CarrerasCCarrerasId");
 
                     b.ToTable("Cursos");
                 });
@@ -112,6 +118,8 @@ namespace CampusVirtual.Migrations
                 {
                     b.Property<int>("GruposId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CursoId");
 
                     b.Property<string>("Horario");
 
@@ -337,6 +345,13 @@ namespace CampusVirtual.Migrations
                     b.HasOne("CampusVirtual.Model.Entities.Usuario", "Director1")
                         .WithMany()
                         .HasForeignKey("Director1Id");
+                });
+
+            modelBuilder.Entity("CampusVirtual.Model.Entities.Curso", b =>
+                {
+                    b.HasOne("CampusVirtual.Model.Entities.Carreras", "CarrerasC")
+                        .WithMany()
+                        .HasForeignKey("CarrerasCCarrerasId");
                 });
 
             modelBuilder.Entity("CampusVirtual.Model.Entities.Evaluacion", b =>
