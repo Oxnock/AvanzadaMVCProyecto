@@ -1,0 +1,92 @@
+﻿@model CampusVirtual.ViewModels.BecaViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject SignInManager<Usuario> SignInManager
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+
+@if (User.IsInRole("Administrador"))
+{
+    <h2 class="title">Administrar Becas</h2>
+    <a asp-action="Crear" asp-controller="Beca" class="btn btn-primary btn-md btn-submit">Crear</a>
+}
+
+@if (User.IsInRole("Administrador") || User.IsInRole("Registro"))
+{
+
+    <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+        <thead>
+            <tr>
+                <th>Beca</th>
+                <th>Nombre</th>
+                <th>Porcentaje</th>
+
+
+                @if (User.IsInRole("Administrador"))
+                {
+                    <th>Opciones</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var curso in Model.Becas)
+            {
+                <tr>
+                    <td>
+                        @curso.BecaId
+                    </td>
+                    <td>
+                        @curso.Nombre
+                    </td>
+                    <td>
+                        @curso.Porcentaje %
+                    </td>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td>
+                            <a class="btn btn-warning btn-md" asp-action="Editar" asp-controller="Beca" asp-route-id="@curso.BecaId"> <i class="FontAwesome fas fa-edit"></i></a>
+                            <a class="btn btn-danger btn-md del" asp-action="Eliminar" asp-controller="Beca" asp-route-id="@curso.BecaId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
+                        </td>
+
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (User.IsInRole("Estudiante"))
+{
+    <h2>Carreras</h2>
+
+    <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
+        <thead>
+            <tr>
+                <th>Curso</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var curso in Model.Becas)
+            {
+                <tr>
+                    <td>
+                        @curso.BecaId
+                    </td>
+                    <td>
+                        @curso.Nombre
+                    </td>
+                    <td>
+                        @curso.Porcentaje
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
