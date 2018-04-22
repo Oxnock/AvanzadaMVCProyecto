@@ -49,8 +49,10 @@ namespace CampusVirtual.Controllers
         [Authorize(Roles = "Administrador")]
         public IActionResult Crear()
         {
-            return View();
-        }
+			CrearViewModel crearViewModel = new CrearViewModel();
+			crearViewModel.Carreras = (from c in _context.Carreras select c).ToList();
+			return View(crearViewModel);
+		}
 
         [Authorize(Roles = "Administrador")]
         [HttpPost]
@@ -62,7 +64,7 @@ namespace CampusVirtual.Controllers
             }
             if (!_context.Cursos.Any(c => c.Nombre == crearViewModel.Nombre))
             {
-                _context.Cursos.Add(new Curso() { Nombre = crearViewModel.Nombre, Codigo = crearViewModel.Codigo, CarreraId=crearViewModel.CarreraId, CarrerasC=crearViewModel.CarrerasC });
+                _context.Cursos.Add(new Curso() { Nombre = crearViewModel.Nombre, Codigo = crearViewModel.Codigo, CarreraId=crearViewModel.CarreraId});
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }

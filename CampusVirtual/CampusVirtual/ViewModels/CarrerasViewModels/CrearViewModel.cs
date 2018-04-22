@@ -15,8 +15,7 @@ namespace CampusVirtual.ViewModels.CarrerasViewModels
         [Required(ErrorMessage = "La descripción es requerida")]
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
-        [Required(ErrorMessage = "El nombre de director es requerido")]
-        public string Director { get; set; }
+       
       
 	}
 }

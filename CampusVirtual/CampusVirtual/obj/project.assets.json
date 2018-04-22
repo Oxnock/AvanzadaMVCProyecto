@@ -8914,7 +8914,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "ZMvF1XeVEJn6r5+fH/TqK0CXOk65TEfbqZnjIdtkzQm4h/ewzPje1DrI0566lqxBMdCyDTmgMNDrTfjiMJfDew==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
@@ -9143,7 +9143,7 @@
       ]
     },
     "System.Diagnostics.Contracts/4.3.0": {
-      "sha512": "eelRRbnm+OloiQvp9CXS0ixjNQldjjkHO4iIkR5XH2VIP8sUB/SIpa1TdUW6/+HDcQ+MlhP3pNa1u5SbzYuWGA==",
+      "sha512": "30scHpY8oT4thPjDWNMCMfNTAU1zt+gUdLkXurh8deA2l9aQKg+P68RneNbyub5B83C5zVd5tuxD7d8SFD7MrQ==",
       "type": "package",
       "path": "system.diagnostics.contracts/4.3.0",
       "files": [
@@ -11562,7 +11562,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "DzQqAjCQxdabxHI8miHn4IA+x4ZtMiQftddcZ5WfmuRA/NWtOf0w3zG22Ik6TOc3Rf7gnfEcxWxjPmKX7C3J1Q==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -13124,7 +13124,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alfredo\\.nuget\\packages\\": {},
+    "C:\\Users\\jose\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13133,25 +13134,26 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alfredo\\Documents\\GitHub\\AvanzadaMVCProyecto\\CampusVirtual\\CampusVirtual\\CampusVirtual.csproj",
+      "projectUniqueName": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\CampusVirtual\\CampusVirtual\\CampusVirtual.csproj",
       "projectName": "CampusVirtual",
-      "projectPath": "C:\\Users\\Alfredo\\Documents\\GitHub\\AvanzadaMVCProyecto\\CampusVirtual\\CampusVirtual\\CampusVirtual.csproj",
-      "packagesPath": "C:\\Users\\Alfredo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alfredo\\Documents\\GitHub\\AvanzadaMVCProyecto\\CampusVirtual\\CampusVirtual\\obj\\",
+      "projectPath": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\CampusVirtual\\CampusVirtual\\CampusVirtual.csproj",
+      "packagesPath": "C:\\Users\\jose\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jose\\Documents\\GitHub\\AvanzadaMVC\\CampusVirtual\\CampusVirtual\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alfredo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.ilstech.com:8080/nuget/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13168,22 +13170,22 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.2"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
+            "version": "[2.0.5, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
           },
-          "Microsoft.AspNetCore.All": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.5"
+            "version": "[2.0.0, )",
+            "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[2.0.2, )"
           }
         },
         "imports": [

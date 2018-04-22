@@ -6,17 +6,20 @@
 
 <h2 class="title">Crear Grupo</h2>
 <form asp-action="Crear" asp-controller="Grupos" method="post">
-	<div class="form-group">
-		<label asp-for="CursoId" class="control-label"></label>
-		<input asp-for="CursoId" class="form-control" />
-		<span asp-validation-for="CursoId" class="text-danger"></span>
-	</div>
-	
-	
+	<select class="form-control" asp-for="CursoId">
+
+		@foreach (var item in Model.Cursos)
+		{
+			<option value="@item.CursoId">@item.Nombre</option>
+		}
+	</select>
+	<span asp-validation-for="Cursos"></span>
+
+
 	<div>
 		<label asp-for="NumeroGrupo"></label>
 		<div>
-			<input asp-for="NumeroGrupo" class="lbl-block spaces" required min="1"/>
+			<input asp-for="NumeroGrupo" class="lbl-block spaces" required min="1" />
 			<span asp-validation-for="NumeroGrupo"></span>
 		</div>
 	</div>
@@ -49,6 +52,6 @@
 
 
 	<div>
-		<input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit"/>
+		<input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit" />
 	</div>
 </form>
