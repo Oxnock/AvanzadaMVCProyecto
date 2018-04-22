@@ -1,0 +1,29 @@
+﻿@model CampusVirtual.ViewModels.UsuarioViewModels.EditarViewModel
+@{
+    ViewBag.Title = "Editar Usuario ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="title">Editar Usuario</h2>
+<form asp-action="Editar" asp-controller="Usuario" method="post">
+
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" value="@Model.Nombre" class="lbl-block spaces" required />
+            <div>
+                <span asp-validation-for="Nombre"></span>
+            </div>
+        </div>
+    </div>
+    <div> 
+        <div>
+            <input asp-for="UsuarioId" value="@Model.UsuarioId" required type="hidden"/>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
+    </div>
+</form>
+
+

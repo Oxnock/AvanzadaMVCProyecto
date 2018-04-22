@@ -53,7 +53,27 @@ namespace CampusVirtual.Controllers
         public IActionResult Eliminar(string id)
         {
             var Usuario = _context.Usuarios.Find(id);
-            _userManager.DeleteAsync(Usuario);
+            _context.Usuarios.Remove(Usuario);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Editar(string id)
+        {
+            var Usuario = _context.Usuarios.Find(id);
+            return View( new EditarViewModel {
+                Nombre=Usuario.UserName,
+                UsuarioId=Usuario.Id
+            });
+        }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpPost]
+        public IActionResult Editar(EditarViewModel model)
+        {
+            var Usuario = _context.Usuarios.Find(model.UsuarioId);
+            Usuario.UserName = model.Nombre;
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,38 +10,32 @@
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" class="lbl-block spaces" required/>
+            <input asp-for="Nombre" class="lbl-block spaces" required />
             <div>
-            <span asp-validation-for="Nombre"></span>
+                <span asp-validation-for="Nombre"></span>
             </div>
         </div>
     </div>
     <div>
         <label asp-for="Clave"></label>
         <div>
-            <input asp-for="Clave" class="lbl-block spaces" required/>
+            <input asp-for="Clave" class="lbl-block spaces" required />
             <div>
                 <span asp-validation-for="Clave"></span>
-                </div>
-                </div>
             </div>
+        </div>
+    </div>
     <div>
         <label asp-for="TipoUsuarios"></label>
         <div>
-            <select asp-for="TipoUsuario" class="lbl-block" required>
-                <option>Estudiante</option>
-                <option>Profesor</option>
-                <option>Registro</option>
-                <option>Director</option>
-                <option>Administrador</option>
+             <select asp-for="TipoUsuario" asp-items="@Model.TipoUsuarios" class="lbl-block"></select>
 
-            </select>
             <div>
                 <span asp-validation-for="TipoUsuario"></span>
-                </div>
-                </div>
             </div>
-    <div>
-        <button type="button" value="Registrar" class="btn btn-primary btn-md btn-submit"/> Registrar </button>
+        </div>
+    </div>
+    <div> 
+        <button type="submit" value="Registrar" class="btn btn-primary btn-md btn-submit"> Registrar </button>
     </div>
 </form>

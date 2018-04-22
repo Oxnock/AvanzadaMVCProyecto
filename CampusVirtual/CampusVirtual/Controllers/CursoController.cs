@@ -32,7 +32,10 @@ namespace CampusVirtual.Controllers
 
             if (Roles.Contains("Administrador"))
             {
-                return View(new IndexViewModel() { Cursos = _context.Cursos.ToList() });
+                return View(new IndexViewModel()
+                {
+                    Cursos = _context.Cursos.ToList()
+                });
             }
 
             return View(new IndexViewModel()
