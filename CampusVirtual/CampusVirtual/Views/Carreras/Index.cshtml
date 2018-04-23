@@ -15,67 +15,20 @@
 }
 
 @if (User.IsInRole("Profesor"))
-    {
+{
 <h2 class="title">Carreras</h2>
-
-<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
-    <thead>
-        <tr>
-            <th>Carrera</th>
-            <th>Codigo</th>
-            <th>Descripcion</th>
-            <th>Director</th>
-
-            @if (User.IsInRole("Administrador"))
-                {
-            <th>Opciones</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var carrera in Model.Carrera)
-        {
-            <tr>
-                <td>
-                    @carrera.Nombre
-                </td>
-                <td>
-                    @carrera.Codigo
-                </td>
-                <td>
-                    @carrera.Descripcion
-                </td>
-                <td>
-                    @carrera.Director
-                </td>
-                @if (User.IsInRole("Administrador"))
-                    {
-                <td>
-                    <a class="btn btn-warning btn-md" asp-action="Editar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-edit"></i></a>
-                    <a class="btn btn-danger btn-md del" asp-action="Eliminar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
-                </td>
-                }
-            </tr>
-        }
-    </tbody>
-</table>
 }
-
-
-@*<h2 class="title">Carreras</h2>*@
-
 <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
     <thead>
         <tr>
             <th>Carrera</th>
             <th>Codigo</th>
             <th>Descripcion</th>
-            <th>Director</th>
+          
             @if (User.IsInRole("Administrador"))
                 {
             <th>Opciones</th>
             }
-            
         </tr>
     </thead>
     <tbody>
@@ -91,9 +44,7 @@
                 <td>
                     @carrera.Descripcion
                 </td>
-                <td>
-                    @carrera.Director
-                </td>
+               
                 @if (User.IsInRole("Administrador"))
                     {
                 <td>
@@ -101,7 +52,6 @@
                     <a class="btn btn-danger btn-md del" asp-action="Eliminar" asp-controller="Carreras" asp-route-id="@carrera.CarrerasId"> <i class="FontAwesome fas fa-trash-alt"></i></a>
                 </td>
                 }
-
             </tr>
         }
     </tbody>

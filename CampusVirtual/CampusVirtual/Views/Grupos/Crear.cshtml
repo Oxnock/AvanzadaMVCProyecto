@@ -6,7 +6,7 @@
 
 <h2 class="title">Crear Grupo</h2>
 <form asp-action="Crear" asp-controller="Grupos" method="post">
-	<select class="form-control" asp-for="CursoId">
+	<select class="form-control lbl-block" asp-for="CursoId">
 
 		@foreach (var item in Model.Cursos)
 		{
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<label asp-for="Horario"></label>
-	<select asp-for="Horario" class="form-control">
+	<select asp-for="Horario" class="form-control lbl-block">
 		<option name="idhorario" value='LM'>Lunes-Mañana </option>
 		<option name="idhorario" value='LT'>Lunes-Tarde  </option>
 		<option name="idhorario" value='LN'>Lunes-Noche  </option>

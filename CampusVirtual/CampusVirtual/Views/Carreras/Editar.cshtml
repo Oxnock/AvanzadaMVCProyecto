@@ -10,7 +10,7 @@
     <div>
         <label asp-for="Nombre"></label>
         <div>
-            <input asp-for="Nombre" value="@Model.Nombre" class="lbl-block spaces" required/>
+            <input asp-for="Nombre" value="@Model.Carreras.Nombre" class="lbl-block spaces" required/>
             <div>
                 <span asp-validation-for="Nombre"></span>
             </div>
@@ -20,7 +20,7 @@
     <div>
         <label asp-for="Codigo"></label>
         <div>
-            <input asp-for="Codigo" value="@Model.Codigo" class="lbl-block spaces" required/>
+            <input asp-for="Codigo" value="@Model.Carreras.Codigo" class="lbl-block spaces" required/>
             <div>
                 <span asp-validation-for="Codigo"></span>
             </div>
@@ -30,21 +30,12 @@
     <div>
         <label asp-for="Descripcion"></label>
         <div>
-            <textarea rows="4" cols="50" asp-for="Descripcion" value="@Model.Descripcion" class="lbl-block spaces" required/></textarea>
+            <textarea rows="4" cols="50" asp-for="Descripcion"  class="lbl-block spaces" required />@Model.Carreras.Descripcion</textarea>
         </div>
         <span asp-validation-for="Descripcion"></span>
     </div>
 
-    <div>
-        <label asp-for="Director"></label>
-        <div>
-            <input asp-for="Director" value="@Model.Director" class="lbl-block spaces" required/>
-            <div>
-                <span asp-validation-for="Director"></span>
-            </div>
-        </div>
-    </div>
-
+   
     <div>
         <input type="submit" value="Editar" class="btn btn-primary btn-md btn-submit" />
     </div>

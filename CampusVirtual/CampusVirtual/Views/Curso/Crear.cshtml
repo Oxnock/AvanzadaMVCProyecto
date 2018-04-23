@@ -6,37 +6,43 @@
 
 <h2 class="title">Crear Curso</h2>
 <form asp-action="Crear" asp-controller="Curso" method="post">
-	<div>
-		<label asp-for="Nombre"></label>
-		<div>
-			<input asp-for="Nombre" class="lbl-block spaces" required />
-			<div>
-				<span asp-validation-for="Nombre"></span>
-			</div>
-		</div>
-	</div>
-	<div>
-		<label asp-for="Codigo"></label>
-		<div>
-			<input asp-for="Codigo" class="lbl-block spaces" required />
-			<div>
-				<span asp-validation-for="Codigo"></span>
-			</div>
-		</div>
-	</div>
-	<select class="form-control" asp-for="CarreraId">
+    <div>
+        <label asp-for="Nombre"></label>
+        <div>
+            <input asp-for="Nombre" class="lbl-block spaces" required />
+            <div>
+                <span asp-validation-for="Nombre"></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Codigo"></label>
+        <div>
+            <input asp-for="Codigo" class="lbl-block spaces" required />
+            <div>
+                <span asp-validation-for="Codigo"></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label asp-for="CarreraId">Carrera</label>
+        <div>
+        <select class="form-control lbl-block" asp-for="CarreraId">
 
-		@foreach (var item in Model.Carreras)
-		{
-			<option value="@item.CarrerasId">@item.Nombre</option>
-		}
-	</select>
-	<span asp-validation-for="Carreras"></span>
+            @foreach (var item in Model.Carreras)
+            {
+                <option value="@item.CarrerasId">@item.Nombre</option>
+            }
+        </select>
+            <div>
+        <span asp-validation-for="Carreras"></span>
+                </div>
+            </div>
+        </div>
 
 
 
-
-	<div>
-		<input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit" />
-	</div>
+        <div>
+            <input type="submit" value="Crear" class="btn btn-primary btn-md btn-submit" />
+        </div>
 </form>

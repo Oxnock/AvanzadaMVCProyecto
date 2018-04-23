@@ -18,7 +18,10 @@
 @if (User.IsInRole("Profesor"))
 {
     <h2 class="title">Cursos Asignados</h2>
+}
 
+@if (User.IsInRole("Profesor") || (User.IsInRole("Administrador")))
+{
     <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
 
         <thead>
@@ -28,12 +31,12 @@
                 @if (User.IsInRole("Administrador"))
                 {
                     <th>Opciones</th>
-                }
+    }
             </tr>
         </thead>
         <tbody>
             @foreach (var curso in Model.Cursos)
-            {
+    {
                 <tr>
                     <td>
                         @curso.Nombre
@@ -61,10 +64,7 @@
     <h2 class="title">Cursos Matriculados</h2>
     <a asp-action="Matricular" asp-controller="Curso" class="btn btn-primary btn-md btn-submit"> Matricular Cursos</a>
 
-}
 
-
-@*<h2 class="title">Cursos</h2>*@
 <table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="table_id">
     <thead>
         <tr>
@@ -97,3 +97,4 @@
         }
     </tbody>
 </table>
+}

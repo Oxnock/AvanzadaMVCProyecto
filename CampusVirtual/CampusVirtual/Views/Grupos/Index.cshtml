@@ -14,7 +14,7 @@
 @if (User.IsInRole("Profesor"))
 {
 	<h2 class="title">Grupos Asignados</h2>
-
+}
 	<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
 		<thead>
 			<tr>
@@ -30,7 +30,7 @@
 			{
 			<tr>
 				<td>
-					@curso.Materia.Nombre
+                    @curso.Materia.Nombre
 				</td>
 				<td>
 					@curso.NumeroGrupo
@@ -49,42 +49,3 @@
 			}
 		</tbody>
 	</table>
-}
-
-<table class="dataTable table table-striped table-bordered display table-hover" cellspacing="0" id="myTable">
-	<thead>
-		<tr>
-			<th>Curso</th>
-			@if (User.IsInRole("Administrador"))
-            {
-				<th>Opciones</th>
-            }
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var curso in Model.Grupo)
-		{
-		<tr>
-			<td>
-				@curso.Materia.Nombre
-			</td>
-			<td>
-				@curso.GruposId
-			</td>
-			<td>
-				@curso.NumeroGrupo
-			</td>
-			<td>
-				@curso.Horario
-			</td>
-			@if (User.IsInRole("Administrador"))
-	{
-		<td>
-			<a asp-action="Editar" asp-controller="Curso" asp-route-id="@curso.GruposId">Editar</a>
-			<a asp-action="Eliminar" asp-controller="Curso" asp-route-id="@curso.GruposId">Eliminar</a>
-		</td>
-}
-		</tr>
-		}
-	</tbody>
-</table>
